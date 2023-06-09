@@ -5,3 +5,6 @@ let btnMenu = document.getElementById("btnMenu");
 let divIntro = document.getElementById("intro");
 let menu = document.getElementById("menu");
 let w = window.innerWidth;
+//EVENTS
+let mobile = checkDevice();
+btnHome.onclick = previousPage;
