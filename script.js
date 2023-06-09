@@ -6,6 +6,10 @@ let divIntro = document.getElementById("intro");
 let menu = document.getElementById("menu");
 let w = window.innerWidth;
 let hamburger = false; //boolean for the hamburger menu state
+let cit = document.getElementById("citation");
+let btn1 = document.getElementById("btnCourses");
+let btn2 = document.getElementById("btnAbout");
+let btn3 = document.getElementById("btnContacts");
 //EVENTS
 let mobile = checkDevice();
 btnHome.onclick = previousPage;
@@ -44,14 +48,28 @@ function changeLayout(){
     menu.style.top = "-15%";
     menu.style.right = "0";
     menu.style.left = "0";
+    menu.style.zIndex = "5";
     menu.style.backgroundColor = "lightblue";
     menu.style.transition = "top 1s"; // animation of the top that switch from -200 to 0 px
     btnMenu.style.transition = "rotate 0.5s"; // animation of the top that switch from -200 to 0 px
+    btnMenu.onclick = menuMobile;  
     //assignments to reset the transition
     btnMenu.style.rotate = "0deg"; 
 
-    btnMenu.onclick = menuMobile;
-    //GRID
+    //GRID 1
+    divIntro.style.gridTemplateColumns = "80%";
+    divIntro.style.gridTemplateRows = "repeat(6, 20%[row-start])";
+    divIntro.style.marginTop = "20%";
+        //single area settings
+            //first button
+            btn1.style.gridColumn = "1";
+            btn1.style.gridRow = "4";
+            //second button
+            btn2.style.gridColumn = "1";
+            btn2.style.gridRow = "5";
+            //third button
+            btn3.style.gridColumn = "1";
+            btn3.style.gridRow = "6";
 
 }
 
