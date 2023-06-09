@@ -1,0 +1,97 @@
+html{
+    /*wallpaper adaptation found on css tricks*/
+    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#menu,a{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    color: black;
+}
+
+a:hover{
+    color: white;
+}
+
+#logo{
+    flex-grow: 2; /*logo occupa 2*/
+}
+
+#imgLogo{
+    transition: rotate 0.5s;
+}
+
+#imgLogo:hover{
+    rotate: 360deg;
+}
+
+#home,#corsi,#about,#log,#sign{
+    flex-grow: 1; /*tutti tranne logo occupano 1*/
+}
+
+#intro{
+    display: grid;
+    grid-template-columns: 30% 40%;
+    grid-template-rows: repeat(3, 20% [row-start]);
+    justify-content: space-evenly; /*separa le 2 colonne in modo equo*/
+    align-content: center;    /*allinea al centro asse y FIXME: TODO:*/
+    padding-top: 10%;
+}
+
+#citation{
+    width: 90%;
+    text-align: center;
+}
+
+#cit{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    grid-column: 1;
+    grid-row: 1/4; /*prende la colonna 1, righe dalla 1 alla 3*/
+    justify-content: center; 
+}
+
+#btnCourses{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    height: 120px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#btnAbout{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    height: 120px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#btnContacts{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    height: 120px;
+    grid-column: 2;
+    grid-row: 3;
+}
+#btnCourses,#btnAbout,#btnContacts{
+    transition: all 0.9s;
+}
+#btnCourses:hover,#btnAbout:hover,#btnContacts:hover{
+    transform: scale(1.1);
+}
+
+.icons{
+    width: 6%;
+    float: right;
+}
+#intro:not(.icons){
+    float: left;
+    
+}
