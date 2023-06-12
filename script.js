@@ -11,10 +11,9 @@ let btn1 = document.getElementById("btnCourses");
 let btn2 = document.getElementById("btnAbout");
 let btn3 = document.getElementById("btnContacts");
 
-//EVENTS
-let mobile = checkDevice();
-btnContatti.onclick = nextPage;
 
+//EVENTS
+btnContatti.onclick = nextPage;
 btnHome.onclick = previousPage;
 
 //FUNCTIONS
@@ -27,61 +26,24 @@ function previousPage(){
 
 }
 
-function checkDevice(){
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-        // true for mobile device
-        changeLayout();
-        return true;
-      }else{
-        // false for not mobile device
-        return false;
-    }
-}
-
-function changeLayout(){
-
-    hamburger = false;
-    btnMenu.src = "images/menu.svg";
-    btnMenu.style.zIndex = "10";
-    btnMenu.style.position = "relative";
-
-    //MENU
-    menu.style.marginTop = "0px";
-    menu.style.display = "block";
-    menu.style.position = "fixed";
-    menu.style.top = "-15%";
-    menu.style.right = "0";
-    menu.style.left = "0";
-    menu.style.zIndex = "5";
-    menu.style.backgroundColor = "lightblue";
-    menu.style.transition = "top 1s"; // animation of the top that switch from -200 to 0 px
-    btnMenu.style.transition = "rotate 0.5s"; // animation of the top that switch from -200 to 0 px
-    btnMenu.onclick = menuMobile;  
-    //assignments to reset the transition
-    btnMenu.style.rotate = "0deg"; 
-
-    //GRID 1
-    divIntro.style.gridTemplateColumns = "80%";
-    divIntro.style.gridTemplateRows = "repeat(6, 20%[row-start])";
-    divIntro.style.marginTop = "20%";
-        //single area settings
-            //first button
-            btn1.style.gridColumn = "1";
-            btn1.style.gridRow = "4";
-            //second button
-            btn2.style.gridColumn = "1";
-            btn2.style.gridRow = "5";
-            //third button
-            btn3.style.gridColumn = "1";
-            btn3.style.gridRow = "6";
-}
-
 function menuMobile(){
-    btnMenu.src = "images/cancel.svg";
-    btnMenu.style.rotate = "360deg";
-    menu.style.top = "0";
-    hamburger = true;
-    btnMenu.onclick = changeLayout;
-    //transition reset
-    btnMenu.style.transition = "rotate 0.5s";
+
+    if(hamburger != true){
+        menu.style.height= "100vh"; /* For 100% screen height */
+        btnMenu.style.content = "url(images/cancel.svg)";
+        btnMenu.style.rotate = "360deg";
+    menu.style.left = "0";
+        divIntro.style.visibility = "hidden";
+        divIntro.style.transition = "opacity 2s";
+        hamburger = true;
+    }
+    else{
+        menu.style.height= "0"; /* For 100% screen height */
+        btnMenu.style.content = "url(images/menu.svg)";
+    btnMenu.style.rotate = "0deg"; 
+        menu.style.left = "-100%";
+        divIntro.style.visibility = "visible";
+        hamburger = false;
+}
+
 }

@@ -97,6 +97,7 @@ a:hover{
 
 #btnMenu{
     width:60px;
+    display: none;
 }
 
 .icons{
@@ -107,4 +108,78 @@ a:hover{
 #intro:not(.icons){
     float: left;
     
+}
+
+@media(max-width: 800px){
+    
+/*Menu*/
+    div#menu{
+        align-self: stretch;
+        margin-top: 0px;
+        height: 0;
+        display: block;
+        position: relative;
+        top: 0;
+        left: -100%;
+        z-index: 5;
+        visibility: visible;
+        backdrop-filter: blur(15px);
+        transition: all 1s ease-in-out; /*animation of the top that switch from -200 to 0 px*/
+    }
+
+    #btnMenu{
+        display: block;
+        width: 60px;
+        content: url("images/menu.svg");
+        z-index: 10;
+        position: absolute;
+        transition: rotate 0.5s; /* animation of the top that switch from -200 to 0 px*/
+        rotate: 0deg; /*assignments to reset the transition*/
+    }
+
+    .aMenu{
+        padding-top: 15%;
+    }
+
+/*GRID 1*/
+   
+    div#intro{
+        display: grid;
+        grid-template-columns: 80%;
+        grid-template-rows: repeat(6, 20%[row-start]);
+        margin-top: 20%;
+        justify-content: center; /*allinea al centro asse x*/
+        align-content: center;    /*allinea al centro asse y FIXME: TODO:*/
+        padding-top: 10%;
+        column-gap: 3%;
+        row-gap: 15%;
+    }
+
+    #cit{
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        grid-column: 1;
+        grid-row: 1/4; /*prende la colonna 1, righe dalla 1 alla 3*/
+        place-self: center;/*asse x*/
+        align-self: center;/*asse y*/
+    }
+
+    #btnCourses{                    
+        /*first button*/
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    #btnAbout{
+        /*second button*/
+        grid-column: 1;
+        grid-row: 5;
+    }
+
+    #btnContacts{
+        /*third button*/
+        grid-column: 1;
+        grid-row: 6;
+    }
+
 }
