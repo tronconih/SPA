@@ -6,6 +6,8 @@ let divGrill2 = document.getElementById("grill2");
 let menu = document.getElementById("menu");
 let w = window.innerWidth;
 let hamburger = false; //boolean for the hamburger menu state
+divContacts.style.display = "none";
+>>>>>>> Stashed changes
 
 //EVENTS
 let mobile = checkDevice();
@@ -63,14 +65,19 @@ function changeLayout(){
     alert("phone");
     btnMenu.src = "images/menu.png";
     btnMenu.style.zIndex = "10";
+    btnMenu.style.position = "relative";
     //MENU
+    menu.style.marginTop = "0px";
     menu.style.display = "block";
     menu.style.position = "fixed";
-    menu.style.top = "-200px";
+    menu.style.top = "-15%";
     menu.style.right = "0";
     menu.style.left = "0";
-    menu.style.transition = "top 1s"; // animation of the top that switch from -200 to 0 px
     menu.style.backgroundColor = "lightblue";
+    menu.style.transition = "top 1s"; // animation of the top that switch from -200 to 0 px
+    btnMenu.style.transition = "rotate 0.5s"; // animation of the top that switch from -200 to 0 px
+    //assignments to reset the transition
+    btnMenu.style.rotate = "0deg"; 
 
     btnMenu.onclick = menuMobile;
     //GRID
@@ -78,6 +85,8 @@ function changeLayout(){
 }
 
 function menuMobile(){
+    btnMenu.src = "images/cancel.svg";
+    btnMenu.style.rotate = "360deg";
     menu.style.top = "0";
 }
 =======
@@ -86,3 +95,8 @@ let menu = document.getElementById("menu");
 let w = window.innerWidth;
 divContacts.style.display = "none";
 >>>>>>> Stashed changes
+    hamburger = true;
+    btnMenu.onclick = changeLayout;
+    //transition reset
+    btnMenu.style.transition = "rotate 0.5s";
+}
