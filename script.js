@@ -18,12 +18,13 @@ btnHome.onclick = previousPage;
 //FUNCTIONS
 function nextPage(){
 
-    divGrill2.style.display = "grid";
+    divContacts.style.display = "grid";
 }
 
 function previousPage(){
 
-    divGrill2.style.display = "none";
+=======
+    divContacts.style.display = "grid";
 }
 
 function checkDevice(){
@@ -59,6 +60,20 @@ function changeLayout(){
     btnMenu.style.rotate = "0deg"; 
 
     
+    alert("phone");
+    btnMenu.src = "images/menu.png";
+    btnMenu.style.zIndex = "10";
+    //MENU
+    menu.style.display = "block";
+    menu.style.position = "fixed";
+    menu.style.top = "-200px";
+    menu.style.right = "0";
+    menu.style.left = "0";
+    menu.style.transition = "top 1s"; // animation of the top that switch from -200 to 0 px
+    menu.style.backgroundColor = "lightblue";
+
+    btnMenu.onclick = menuMobile;
+    //GRID
 
 }
 
