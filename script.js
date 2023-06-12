@@ -1,8 +1,8 @@
 //DECLARATIONS
+let btnContatti = document.getElementById("btnContacts");
 let btnHome = document.getElementById("home");
 let btnMenu = document.getElementById("btnMenu");
-let divGrill2 = document.getElementById("grill2");
-<<<<<<< Updated upstream
+let divContacts = document.getElementById("contacts");
 let menu = document.getElementById("menu");
 let w = window.innerWidth;
 let hamburger = false; //boolean for the hamburger menu state
@@ -13,37 +13,19 @@ let email = document.getElementById("email");
 let phone = document.getElementById("number");
 let socials = document.getElementById("socials");
 divContacts.style.display = "none";
->>>>>>> Stashed changes
 
 //EVENTS
 let mobile = checkDevice();
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
-=======
-btnContatti.onclick = nextPage;
-
->>>>>>> Stashed changes
 btnHome.onclick = previousPage;
 
 //FUNCTIONS
 function nextPage(){
-
     divContacts.style.display = "grid";
 }
 
 function previousPage(){
-<<<<<<< Updated upstream
-
-=======
-    divContacts.style.display = "grid";
-=======
     divContacts.style.display = "none";
-    divIntro.style.display = "grid"; 
-
->>>>>>> Stashed changes
 }
 
 function checkDevice(){
@@ -58,11 +40,12 @@ function checkDevice(){
 }
 
 function changeLayout(){
-    //alert("phone");
+
     hamburger = false;
     btnMenu.src = "images/menu.svg";
     btnMenu.style.zIndex = "10";
     btnMenu.style.position = "relative";
+
     //MENU
     menu.style.marginTop = "0px";
     menu.style.display = "block";
@@ -77,27 +60,6 @@ function changeLayout(){
     btnMenu.onclick = menuMobile;  
     //assignments to reset the transition
     btnMenu.style.rotate = "0deg"; 
-
-    
-    alert("phone");
-    btnMenu.src = "images/menu.png";
-    btnMenu.style.zIndex = "10";
-    btnMenu.style.position = "relative";
-    //MENU
-    menu.style.marginTop = "0px";
-    menu.style.display = "block";
-    menu.style.position = "fixed";
-    menu.style.top = "-15%";
-    menu.style.right = "0";
-    menu.style.left = "0";
-    menu.style.backgroundColor = "lightblue";
-    menu.style.transition = "top 1s"; // animation of the top that switch from -200 to 0 px
-    btnMenu.style.transition = "rotate 0.5s"; // animation of the top that switch from -200 to 0 px
-    btnMenu.onclick = menuMobile;  
-    //assignments to reset the transition
-    btnMenu.style.rotate = "0deg"; 
-
-    //GRID 1
 
     //GRID 2
     divGrill2.style.gridTemplateColumns = "50% 30%";

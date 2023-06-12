@@ -13,10 +13,7 @@ html{
     justify-content: space-evenly;
     text-align: center;
     color: black;
-<<<<<<< Updated upstream
     transition: color 0.9s;
-=======
->>>>>>> Stashed changes
 }
 
 a:hover{
@@ -28,11 +25,7 @@ a:hover{
 }
 
 #imgLogo{
-<<<<<<< Updated upstream
     transition: rotate 0.9s;
-=======
-    transition: rotate 0.5s;
->>>>>>> Stashed changes
 }
 
 #imgLogo:hover{
@@ -43,44 +36,10 @@ a:hover{
     flex-grow: 1; /*tutti tranne logo occupano 1*/
 }
 
-
-=======
-    
-
-
-
-
-
-
-
-
-
-
-<<<<<<< Updated upstream
-
-
-
-<<<<<<< Updated upstream
-
-=======
-=======
-
->>>>>>> Stashed changes
 #grill2{
     display: grid;
     grid-template-columns: 15% 35%;
     grid-template-rows: repeat(2, 20% [row-start]);
-<<<<<<< Updated upstream
-    justify-content: center; /*allinea al centro asse x*/
-    padding-top: 5%;
-    align-content: space-between;
-    column-gap: 3%;
-    row-gap: 15%;
-=======
-    justify-content: space-evenly; /*separa le 2 colonne in modo equo*/
-    padding-top: 5%;
-    align-content: space-between;
->>>>>>> Stashed changes
     justify-content: center; /*allinea al centro asse x*/
     padding-top: 5%;
     align-content: space-between;
@@ -100,14 +59,11 @@ a:hover{
     grid-row: 1/5; /*prende la colonna 1, righe dalla 1 alla 4*/
     margin-left: auto;
     margin-right: auto;
-<<<<<<< Updated upstream
     transition: background-image 1s ease-in-out;
 }
 
 #myPic:hover{
     background-image: url("images/smile.png");
-=======
->>>>>>> Stashed changes
 }
 
 #name{
@@ -137,7 +93,6 @@ a:hover{
 #socials{
     border-radius: 25px;
     backdrop-filter: blur(15px);
-<<<<<<< Updated upstream
     height: 40px;
     grid-column: 2;
     grid-row: 4;
@@ -145,31 +100,15 @@ a:hover{
     align-self: center;/*asse y*/
 }
 
-#insta, #facebook, #twitter{
-    margin-right: 5%;
->>>>>>> Stashed changes
-    
-
-    height: 40px;
->>>>>>> Stashed changes
-    grid-column: 2;
-    grid-row: 4;
-    display: flex;
-    align-self: center;/*asse y*/
-}
 #insta, #facebook, #twitter{
     margin-right: 5%;
 }
 
 #subtitle{
     padding-top: 5%;
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
     padding-left: 15%;
 }
+
 #btnMenu{
     width:60px;
 }
->>>>>>> Stashed changes
