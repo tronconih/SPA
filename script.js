@@ -18,7 +18,12 @@ divContacts.style.display = "none";
 //EVENTS
 let mobile = checkDevice();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+
+>>>>>>> Stashed changes
+=======
+btnContatti.onclick = nextPage;
 
 >>>>>>> Stashed changes
 btnHome.onclick = previousPage;
@@ -30,9 +35,15 @@ function nextPage(){
 }
 
 function previousPage(){
+<<<<<<< Updated upstream
 
 =======
     divContacts.style.display = "grid";
+=======
+    divContacts.style.display = "none";
+    divIntro.style.display = "grid"; 
+
+>>>>>>> Stashed changes
 }
 
 function checkDevice(){

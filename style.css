@@ -81,6 +81,11 @@ a:hover{
     padding-top: 5%;
     align-content: space-between;
 >>>>>>> Stashed changes
+    justify-content: center; /*allinea al centro asse x*/
+    padding-top: 5%;
+    align-content: space-between;
+    column-gap: 3%;
+    row-gap: 15%;
 }
 
 #myPic{
