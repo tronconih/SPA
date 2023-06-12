@@ -95,9 +95,78 @@ a:hover{
     transform: scale(1.1);
 }
 
+<<<<<<< Updated upstream
 .icons{
     width: 6%;
     float: right;
+=======
+#grill2{
+    display: grid;
+    grid-template-columns: 15% 35%;
+    grid-template-rows: repeat(2, 20% [row-start]);
+    justify-content: center; /*allinea al centro asse x*/
+    padding-top: 5%;
+    align-content: space-between;
+    column-gap: 3%;
+    row-gap: 15%;
+}
+
+#myPic{
+    background-image: url("images/mySelf.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    grid-column: 1;
+    grid-row: 1/5; /*prende la colonna 1, righe dalla 1 alla 4*/
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-image 1s ease-in-out;
+}
+
+#myPic:hover{
+    background-image: url("images/smile.png");
+}
+
+#name{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    height: 80px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#email{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    height: 80px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#number{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    height: 80px;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#socials{
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    height: 40px;
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    align-self: center;/*asse y*/
+}
+
+#insta, #facebook, #twitter{
+    margin-right: 5%;
+>>>>>>> Stashed changes
 }
 #intro:not(.icons){
     float: left;
