@@ -12,6 +12,11 @@ let btn2 = document.getElementById("btnAbout");
 let btn3 = document.getElementById("btnContacts");
 //EVENTS
 let mobile = checkDevice();
+<<<<<<< Updated upstream
+=======
+btnContatti.onclick = nextPage;
+
+>>>>>>> Stashed changes
 btnHome.onclick = previousPage;
 
 //FUNCTIONS
@@ -21,6 +26,7 @@ function nextPage(){
 
 function previousPage(){
     divIntro.style.display = "grid"; 
+
 }
 
 function checkDevice(){
@@ -30,7 +36,6 @@ function checkDevice(){
         return true;
       }else{
         // false for not mobile device
-        alert("desktop");
         return false;
     }
 }

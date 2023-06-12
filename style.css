@@ -13,6 +13,7 @@ html{
     justify-content: space-evenly;
     text-align: center;
     color: black;
+    transition: color 0.9s;
 }
 
 a:hover{
@@ -24,7 +25,7 @@ a:hover{
 }
 
 #imgLogo{
-    transition: rotate 0.5s;
+    transition: rotate 0.9s;
 }
 
 #imgLogo:hover{
@@ -39,14 +40,19 @@ a:hover{
     display: grid;
     grid-template-columns: 30% 40%;
     grid-template-rows: repeat(3, 20% [row-start]);
-    justify-content: space-evenly; /*separa le 2 colonne in modo equo*/
+    justify-content: center; /*allinea al centro asse x*/
     align-content: center;    /*allinea al centro asse y FIXME: TODO:*/
     padding-top: 10%;
+    column-gap: 3%;
+    row-gap: 15%;
 }
 
 #citation{
     width: 90%;
     text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    
 }
 
 #cit{
@@ -54,7 +60,8 @@ a:hover{
     backdrop-filter: blur(15px);
     grid-column: 1;
     grid-row: 1/4; /*prende la colonna 1, righe dalla 1 alla 3*/
-    justify-content: center; 
+    place-self: center;/*asse x*/
+    align-self: center;/*asse y*/
 }
 
 #btnCourses{
@@ -63,6 +70,7 @@ a:hover{
     height: 120px;
     grid-column: 2;
     grid-row: 1;
+    transition: all 0.4s;
 }
 
 #btnAbout{
@@ -97,4 +105,12 @@ a:hover{
 }
 #btnMenu{
     width:60px;
+}
+.icons{
+    width: 6%;
+    float: right;
+}
+#intro:not(.icons){
+    float: left;
+    
 }
