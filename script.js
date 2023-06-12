@@ -1,4 +1,5 @@
 //DECLARATIONS
+let btnHome = document.getElementById("home");
 let btnMenu = document.getElementById("btnMenu");
 let divGrill2 = document.getElementById("grill2");
 <<<<<<< Updated upstream
