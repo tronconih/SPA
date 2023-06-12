@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "prettier": "^3.0.0-alpha.6"
+  },
+  "dependencies": {
+    "eslint": "^8.42.0"
+  }
+}
