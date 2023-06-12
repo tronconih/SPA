@@ -10,13 +10,11 @@ let cit = document.getElementById("citation");
 let btn1 = document.getElementById("btnCourses");
 let btn2 = document.getElementById("btnAbout");
 let btn3 = document.getElementById("btnContacts");
+
 //EVENTS
 let mobile = checkDevice();
-<<<<<<< Updated upstream
-=======
 btnContatti.onclick = nextPage;
 
->>>>>>> Stashed changes
 btnHome.onclick = previousPage;
 
 //FUNCTIONS
@@ -41,11 +39,12 @@ function checkDevice(){
 }
 
 function changeLayout(){
-    //alert("phone");
+
     hamburger = false;
     btnMenu.src = "images/menu.svg";
     btnMenu.style.zIndex = "10";
     btnMenu.style.position = "relative";
+
     //MENU
     menu.style.marginTop = "0px";
     menu.style.display = "block";
@@ -75,9 +74,14 @@ function changeLayout(){
             //third button
             btn3.style.gridColumn = "1";
             btn3.style.gridRow = "6";
-
 }
 
 function menuMobile(){
+    btnMenu.src = "images/cancel.svg";
+    btnMenu.style.rotate = "360deg";
     menu.style.top = "0";
+    hamburger = true;
+    btnMenu.onclick = changeLayout;
+    //transition reset
+    btnMenu.style.transition = "rotate 0.5s";
 }
