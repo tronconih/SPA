@@ -148,13 +148,17 @@ a:hover{
 #insta, #facebook, #twitter{
     margin-right: 5%;
 >>>>>>> Stashed changes
-}
     
-=======
-    height: 30px;
+
+    height: 40px;
+>>>>>>> Stashed changes
     grid-column: 2;
     grid-row: 4;
     display: flex;
+    align-self: center;/*asse y*/
+}
+#insta, #facebook, #twitter{
+    margin-right: 5%;
 }
 
 #subtitle{
