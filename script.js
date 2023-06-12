@@ -1,32 +1,28 @@
 //DECLARATIONS
-let btnContatti = document.getElementById("btnContacts");
-let btnHome = document.getElementById("home");
 let btnMenu = document.getElementById("btnMenu");
-let divIntro = document.getElementById("intro");
+let divGrill2 = document.getElementById("grill2");
+<<<<<<< Updated upstream
 let menu = document.getElementById("menu");
 let w = window.innerWidth;
 let hamburger = false; //boolean for the hamburger menu state
-let cit = document.getElementById("citation");
-let btn1 = document.getElementById("btnCourses");
-let btn2 = document.getElementById("btnAbout");
-let btn3 = document.getElementById("btnContacts");
+
 //EVENTS
 let mobile = checkDevice();
 <<<<<<< Updated upstream
 =======
-btnContatti.onclick = nextPage;
 
 >>>>>>> Stashed changes
 btnHome.onclick = previousPage;
 
 //FUNCTIONS
 function nextPage(){
-    divIntro.style.display = "none";
+
+    divGrill2.style.display = "grid";
 }
 
 function previousPage(){
-    divIntro.style.display = "grid"; 
 
+    divGrill2.style.display = "none";
 }
 
 function checkDevice(){
@@ -61,23 +57,16 @@ function changeLayout(){
     //assignments to reset the transition
     btnMenu.style.rotate = "0deg"; 
 
-    //GRID 1
-    divIntro.style.gridTemplateColumns = "80%";
-    divIntro.style.gridTemplateRows = "repeat(6, 20%[row-start])";
-    divIntro.style.marginTop = "20%";
-        //single area settings
-            //first button
-            btn1.style.gridColumn = "1";
-            btn1.style.gridRow = "4";
-            //second button
-            btn2.style.gridColumn = "1";
-            btn2.style.gridRow = "5";
-            //third button
-            btn3.style.gridColumn = "1";
-            btn3.style.gridRow = "6";
+    
 
 }
 
 function menuMobile(){
     menu.style.top = "0";
 }
+=======
+let divContacts = document.getElementById("contacts");
+let menu = document.getElementById("menu");
+let w = window.innerWidth;
+divContacts.style.display = "none";
+>>>>>>> Stashed changes
