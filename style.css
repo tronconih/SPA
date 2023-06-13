@@ -1,18 +1,18 @@
 html{
     /*wallpaper adaptation found on css tricks*/
-    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
+    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
 }
 
-#menu,a{
-    margin-top: 1%;
+#homeMenu,a{
+    color: black;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 24px;
     text-align: center;
-    color: black;
     transition: color 0.9s;
 }
 
@@ -21,7 +21,8 @@ a:hover{
 }
 
 #logo{
-    flex-grow: 2; /*logo occupa 2*/
+    /*logo takes 2*/
+    flex-grow: 2; 
 }
 
 #imgLogo{
@@ -32,154 +33,166 @@ a:hover{
     rotate: 360deg;
 }
 
-#home,#corsi,#about,#log,#sign{
-    flex-grow: 1; /*tutti tranne logo occupano 1*/
+#home,#courses,#about,#log,#sign{
+   /*everyone except logo takes 1*/
+   flex-grow: 1; 
 }
 
 #intro{
+    /*align center axe y FIXME: TODO:*/
+    align-content: center;     
+    column-gap: 48px;
     display: grid;
     grid-template-columns: 30% 40%;
     grid-template-rows: repeat(3, 20% [row-start]);
-    justify-content: center; /*allinea al centro asse x*/
-    align-content: center;    /*allinea al centro asse y FIXME: TODO:*/
-    padding-top: 10%;
-    column-gap: 3%;
-    row-gap: 15%;
+    /*align center axe x*/
+    justify-content: center; 
+    padding-top: 7%;
+    row-gap: 40px;
 }
 
 #citation{
-    text-align: center;
     margin-left: 2%;
     margin-right: 2%;
-    
+    text-align: center;   
 }
 
 #cit{
-    border-radius: 25px;
+    /*axe y*/
+    align-self: center;
     backdrop-filter: blur(15px);
+    border-radius: 25px;
     grid-column: 1;
-    grid-row: 1/4; /*prende la colonna 1, righe dalla 1 alla 3*/
-    place-self: center;/*asse x*/
-    align-self: center;/*asse y*/
+    /*it takes the 1st column, rows from 1 to 3*/
+    grid-row: 1/4;
+    /*axe x*/ 
+    place-self: center;
 }
 
-#btnCourses{
-    border-radius: 25px;
+#coursesButtonRel{
     backdrop-filter: blur(15px);
-    height: 120px;
+    border-radius: 25px;
     grid-column: 2;
     grid-row: 1;
+    height: 120px;
     transition: all 0.4s;
 }
 
-#btnAbout{
-    border-radius: 25px;
+#aboutButtonRel{
     backdrop-filter: blur(15px);
-    height: 120px;
+    border-radius: 25px;
     grid-column: 2;
     grid-row: 2;
+    height: 120px;
 }
 
-#btnContacts{
-    border-radius: 25px;
+#contactButtonRel{
     backdrop-filter: blur(15px);
-    height: 120px;
+    border-radius: 25px;
     grid-column: 2;
     grid-row: 3;
+    height: 120px;
 }
 
-#btnCourses,#btnAbout,#btnContacts{
+#coursesButtonRel,#aboutButtonRel,#contactButtonRel{
     transition: all 0.9s;
 }
-#btnCourses:hover,#btnAbout:hover,#btnContacts:hover{
+#coursesButtonRel:hover,#aboutButtonRel:hover,#contactButtonRel:hover{
     transform: scale(1.1);
 }
 
 #btnMenu{
-    width:60px;
     display: none;
+    width:60px;
 }
 
-.icons{
-    width: 6%;
+.button-icons{
     float: right;
+    width: 6%;
 }
 
-#intro:not(.icons){
+#intro:not(.button-icons){
     float: left;
-    
 }
 
 @media(max-width: 800px){
     
 /*Menu*/
-    div#menu{
+    div#homeMenu{
         align-self: stretch;
-        margin-top: 0px;
-        height: 0;
+        backdrop-filter: blur(15px);
         display: block;
+        height: 0;
+        left: -100%;
+        margin-top: 0px;
         position: relative;
         top: 0;
-        left: -100%;
-        z-index: 5;
+        /*animation of the top that switch from -200 to 0 px*/
+        transition: all 1s ease-in-out; 
         visibility: visible;
-        backdrop-filter: blur(15px);
-        transition: all 1s ease-in-out; /*animation of the top that switch from -200 to 0 px*/
+        z-index: 5;
     }
 
     #btnMenu{
-        display: block;
-        width: 60px;
         content: url("images/menu.svg");
-        z-index: 10;
+        display: block;
         position: absolute;
-        transition: rotate 0.5s; /* animation of the top that switch from -200 to 0 px*/
-        rotate: 0deg; /*assignments to reset the transition*/
+        /*assignments to reset the transition*/
+        rotate: 0deg; 
+        /* animation of the top that switch from -200 to 0 px*/
+        transition: rotate 0.5s; 
+        width: 60px;
+        z-index: 10;
     }
 
-    .aMenu{
+    .menu-link{
         padding-top: 15%;
     }
 
 /*GRID 1*/
    
     div#intro{
+        /*align center axe y FIXME: TODO:*/
+        align-content: center;    
+        column-gap: 3%;
         display: grid;
         grid-template-columns: 80%;
         grid-template-rows: repeat(6, 20%[row-start]);
+        /*align center axe x*/
+        justify-content: center; 
         margin-top: 20%;
-        justify-content: center; /*allinea al centro asse x*/
-        align-content: center;    /*allinea al centro asse y FIXME: TODO:*/
         padding-top: 10%;
-        column-gap: 3%;
         row-gap: 15%;
     }
 
     #cit{
-        border-radius: 25px;
+        /*axe y*/
+        align-self: center;
         backdrop-filter: blur(15px);
+        border-radius: 25px;
         grid-column: 1;
-        grid-row: 1/4; /*prende la colonna 1, righe dalla 1 alla 3*/
-        place-self: center;/*asse x*/
-        align-self: center;/*asse y*/
+        /*takes the 1st column, rows from 1 to 3*/
+        grid-row: 1/4; 
+        /*axe x*/
+        place-self: center;
     }
 
-    #btnCourses{                    
+    #coursesButtonRel{                    
         /*first button*/
-        grid-column: 1;
         grid-row: 4;
+        grid-column: 1;
     }
 
-    #btnAbout{
+    #aboutButtonRel{
         /*second button*/
-        grid-column: 1;
         grid-row: 5;
+        grid-column: 1;
     }
 
-    #btnContacts{
+    #contactButtonRel{
         /*third button*/
-        grid-column: 1;
         grid-row: 6;
+        grid-column: 1;
     }
 
 }

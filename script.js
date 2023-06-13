@@ -1,20 +1,9 @@
-//DECLARATIONS
-let btnContatti = document.getElementById("btnContacts");
-let btnHome = document.getElementById("home");
-let btnMenu = document.getElementById("btnMenu");
-let divIntro = document.getElementById("intro");
-let menu = document.getElementById("menu");
-let w = window.innerWidth;
-let hamburger = false; //boolean for the hamburger menu state
-let cit = document.getElementById("citation");
-let btn1 = document.getElementById("btnCourses");
-let btn2 = document.getElementById("btnAbout");
-let btn3 = document.getElementById("btnContacts");
-
-
 //EVENTS
+const btnContatti = document.getElementById("contactButtonRel");
 btnContatti.onclick = nextPage;
+const btnHome = document.getElementById("home");
 btnHome.onclick = previousPage;
+const divIntro = document.getElementById("intro");
 
 //FUNCTIONS
 function nextPage(){
@@ -26,16 +15,21 @@ function previousPage(){
 
 }
 
+const btnMenu = document.getElementById("btnMenu");
+const menu = document.getElementById("homeMenu");
+const cit = document.getElementById("citation");
+let isMobileMenuOpen = false; //boolean for the hamburger menu state
+
 function menuMobile(){
 
-    if(hamburger != true){
+    if(isMobileMenuOpen != true){
         menu.style.height= "100vh"; /* For 100% screen height */
         btnMenu.style.content = "url(images/cancel.svg)";
         btnMenu.style.rotate = "360deg";
     menu.style.left = "0";
         divIntro.style.visibility = "hidden";
         divIntro.style.transition = "opacity 2s";
-        hamburger = true;
+        isMobileMenuOpen = true;
     }
     else{
         menu.style.height= "0"; /* For 100% screen height */
@@ -43,7 +37,7 @@ function menuMobile(){
     btnMenu.style.rotate = "0deg"; 
         menu.style.left = "-100%";
         divIntro.style.visibility = "visible";
-        hamburger = false;
+        isMobileMenuOpen = false;
 }
 
 }
