@@ -1,18 +1,18 @@
 html{
     /*wallpaper adaptation found on css tricks*/
-    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
+    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
 }
 
 #menu,a{
-    margin-top: 1%;
+    color: black;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 1%;
     text-align: center;
-    color: black;
     transition: color 0.9s;
 }
 
@@ -21,7 +21,8 @@ a:hover{
 }
 
 #logo{
-    flex-grow: 2; /*logo occupa 2*/
+    /*logo takes 2*/
+    flex-grow: 2; 
 }
 
 #imgLogo{
@@ -32,34 +33,37 @@ a:hover{
     rotate: 360deg;
 }
 
-#home,#corsi,#about,#log,#sign{
-    flex-grow: 1; /*tutti tranne logo occupano 1*/
+.menu-link:not(#logo){
+    /*everyone except logo takes 1*/
+    flex-grow: 1; 
 }
 
 #grill2{
+    align-content: space-between;
+    column-gap: 3%;
     display: grid;
     grid-template-columns: 15% 35%;
     grid-template-rows: repeat(2, 20% [row-start]);
-    justify-content: center; /*allinea al centro asse x*/
+    /*align center axe x*/
+    justify-content: center; 
     padding-top: 5%;
-    align-content: space-between;
-    column-gap: 3%;
     row-gap: 15%;
 }
 
 #myPic{
+    backdrop-filter: blur(15px);
     background-image: url("images/mySelf.png");
     background-repeat: no-repeat;
     background-size: cover; 
-    width: 100%;
-    height: 100%;
     border-radius: 25px;
-    backdrop-filter: blur(15px);
+    /*it takes the 1st column, rows from 1 to 4*/
     grid-column: 1;
-    grid-row: 1/5; /*prende la colonna 1, righe dalla 1 alla 4*/
+    grid-row: 1/5; 
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     transition: background-image 1s ease-in-out;
+    width: 100%;
 }
 
 #myPic:hover{
@@ -67,51 +71,49 @@ a:hover{
 }
 
 #name{
-    border-radius: 25px;
-    backdrop-filter: blur(15px);
-    height: 80px;
     grid-column: 2;
     grid-row: 1;
 }
 
 #email{
-    border-radius: 25px;
-    backdrop-filter: blur(15px);
-    height: 80px;
     grid-column: 2;
     grid-row: 2;
 }
 
 #number{
-    border-radius: 25px;
-    backdrop-filter: blur(15px);
-    height: 80px;
     grid-column: 2;
     grid-row: 3;
 }
 
-#socials{
-    border-radius: 25px;
+.contact-elements{
     backdrop-filter: blur(15px);
-    height: 40px;
-    grid-column: 2;
-    grid-row: 4;
-    display: flex;
-    align-self: center;/*asse y*/
+    border-radius: 25px;
+    height: 80px;
 }
 
-#insta, #facebook, #twitter{
+#socials{
+    /*axe y*/
+    align-self: center;
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    display: flex;
+    grid-column: 2;
+    grid-row: 4;
+    height: 40px;
+}
+
+.social-icon{
     margin-right: 5%;
 }
 
 #subtitle{
-    padding-top: 5%;
     padding-left: 15%;
+    padding-top: 5%;
 }
 
-#btnMenu{
-    width:60px;
+#menuButtonRel{
     display: none;
+    width:60px;
 }
 
 @media(max-width: 800px){
@@ -119,48 +121,53 @@ a:hover{
     /*Menu*/
         div#menu{
             align-self: stretch;
-            margin-top: 0px;
-            height: 0;
+            backdrop-filter: blur(15px);
             display: block;
+            height: 0;
+            left: -100%;
+            margin-top: 0px;
             position: relative;
             top: 0;
-            left: -100%;
-            z-index: 5;
+            /*animation of the top that switch from -200 to 0 px*/
+            transition: all 1s ease-in-out;
             visibility: visible;
-            backdrop-filter: blur(15px);
-            transition: all 1s ease-in-out; /*animation of the top that switch from -200 to 0 px*/
+            z-index: 5;
         }
     
-        #btnMenu{
-            display: block;
-            width: 60px;
+        #menuButtonRel{
             content: url("images/menu.svg");
-            z-index: 10;
+            display: block;
             position: absolute;
-            transition: rotate 0.5s; /* animation of the top that switch from -200 to 0 px*/
-            rotate: 0deg; /*assignments to reset the transition*/
+            /*assignments to reset the transition*/
+            rotate: 0deg; 
+            /* animation of the top that switch from -200 to 0 px*/
+            transition: rotate 0.5s; 
+            width: 60px;
+            z-index: 10;
         }
     
-        .aMenu{
+        .menu-link{
             padding-top: 15%;
         }
     
     /*GRID 2*/
        
         div#grill2{
+            align-content: space-between;
+            column-gap: 3%;
             display: grid;
             grid-template-columns: 50% 30%;
             grid-template-rows: repeat(4, 50%[row-start]);
-            justify-content: center; /*allinea al centro asse x*/
+            /*align center axe x*/
+            justify-content: center; 
             padding-top: 5%;
-            align-content: space-between;
-            column-gap: 3%;
             row-gap: 15%;
         }
     
         #myPic{
+            /*it takes the 1st column, rows from 1 to 3*/
             grid-column: 1;
-            grid-row: 1/4; /*prende la colonna 1, righe dalla 1 alla 3*/
+            grid-row: 1/4; 
         }
     
         #name{                    

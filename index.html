@@ -3,33 +3,45 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="container">
+        <div class="all-container">
             
-            <img src="" id="btnMenu" onclick = "menuMobile()">
+            <!-- image that became visible when the window width is under 800px -->
+            <img src="" id="menuButtonRel" onclick = "menuMobile()">
+
+            <!-- MENU -->
             <div id="menu">
-                <a id="home" class="aMenu">Home</a>
-                <a id="courses" class="aMenu">Corsi</a>
-                <a id="about" class="aMenu">About</a>
-                <a id="logo" class="aMenu"><img src="images/logo.png" id="imgLogo"></a>
-                <a id="log" class="aMenu">Log In</a>
-                <a id="sign" class="aMenu">Sign Up</a>
+                <a id="home" class="menu-link">Home</a>
+                <a id="courses" class="menu-link">Corsi</a>
+                <a id="about" class="menu-link">About</a>
+                <a id="logo" class="menu-link"><img src="images/logo.png" id="imgLogo"></a>
+                <a id="log" class="menu-link">Log In</a>
+                <a id="sign" class="menu-link">Sign Up</a>
             </div>
 
+            <!-- Home page contained in a div and managed with a grid -->
             <div id="contacts">
                 <h1 id="subtitle">Contatti.</h1>
+
                 <div id="grill2">
-                    <div id="myPic">
-                        <!-- <img src="images/mySelf.png" id="me"> -->
-                    </div>
-                    <div id="name"><h3>Hendrik Tronconi</h3></div>
-                    <div id="email"><h3>stofacendo@unaprova.ok</h3></div>
-                    <div id="number"><h3>[+39] 3486499202</h3></div>
+
+                    <div id="myPic"></div>
+
+                    <div id="name" class = contact-elements><h3>Hendrik Tronconi</h3></div>
+
+                    <div id="email" class = contact-elements><h3>stofacendo@unaprova.ok</h3></div>
+
+                    <div id="number" class = contact-elements><h3>[+39] 3486499202</h3></div>
+
                     <div id="socials">
-                        <a href="https://instagram.com/" target=”_blank” id="insta"><img src="images/instagram.png" ></a>
-                        <a href="https://facebook.com/" target=”_blank” id="facebook"><img src="images/facebook.png" ></a>
-                        <a href="https://twitter.com/" target=”_blank” id="twitter"><img src="images/twitter.png" ></a>
+
+                        <a href="https://instagram.com/" target=”_blank” class = "social-icon"><img src="images/instagram.png" ></a>
+                        <a href="https://facebook.com/" target=”_blank” class = "social-icon"><img src="images/facebook.png" ></a>
+                        <a href="https://twitter.com/" target=”_blank” class = "social-icon"><img src="images/twitter.png" ></a>
+                    
                     </div>
+
                 </div>
+
             </div>
 
         </div>
