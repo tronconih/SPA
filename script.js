@@ -1,42 +1,41 @@
 //EVENTS
-const btnContatti = document.getElementById("contactButtonRel");
-btnContatti.onclick = nextPage;
-const btnHome = document.getElementById("home");
-btnHome.onclick = previousPage;
-const divIntro = document.getElementById("intro");
+const contactButtonRef = document.getElementById("contactButtonRef");
+contactButtonRef.onclick = nextPage;
+const homeLinkRef = document.getElementById("homeLinkRef");
+homeLinkRef.onclick = previousPage;
+const homeGridRef = document.getElementById("homeGridRef");
 
 //FUNCTIONS
 function nextPage(){
-    divIntro.style.display = "none";
+    homeGridRef.style.display = "none";
 }
 
 function previousPage(){
-    divIntro.style.display = "grid"; 
-
+    homeGridRef.style.display = "grid"; 
 }
 
-const btnMenu = document.getElementById("btnMenu");
-const menu = document.getElementById("homeMenu");
-const cit = document.getElementById("citation");
+const menuButtonRef = document.getElementById("menuButtonRef");
+const homeHeaderRef= document.getElementById("homeHeaderRef");
+const citationHeadingRef = document.getElementById("citationHeadingRef");
 let isMobileMenuOpen = false; //boolean for the hamburger menu state
 
 function menuMobile(){
 
     if(isMobileMenuOpen != true){
-        menu.style.height= "100vh"; /* For 100% screen height */
-        btnMenu.style.content = "url(images/cancel.svg)";
-        btnMenu.style.rotate = "360deg";
-    menu.style.left = "0";
-        divIntro.style.visibility = "hidden";
-        divIntro.style.transition = "opacity 2s";
+        homeHeaderRef.style.height= "100vh"; /* For 100% screen height */
+        menuButtonRef.style.content = "url(images/cancel.svg)";
+        menuButtonRef.style.rotate = "360deg";
+        homeHeaderRef.style.left = "0";
+        homeGridRef.style.visibility = "hidden";
+        homeGridRef.style.transition = "opacity 2s";
         isMobileMenuOpen = true;
     }
     else{
-        menu.style.height= "0"; /* For 100% screen height */
-        btnMenu.style.content = "url(images/menu.svg)";
-    btnMenu.style.rotate = "0deg"; 
-        menu.style.left = "-100%";
-        divIntro.style.visibility = "visible";
+        homeHeaderRef.style.height= "0"; /* For 100% screen height */
+        menuButtonRef.style.content = "url(images/menu.svg)";
+        menuButtonRef.style.rotate = "0deg"; 
+        homeHeaderRef.style.left = "-100%";
+        homeGridRef.style.visibility = "visible";
         isMobileMenuOpen = false;
 }
 

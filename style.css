@@ -1,63 +1,57 @@
+.flex-grow{
+    /*everyone except logo takes 1*/
+    display: flex;
+ }
+
+/*~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~*/
+
 html{
     /*wallpaper adaptation found on css tricks*/
+    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    -webkit-background-size: cover;
     background-size: cover;
-    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
 }
 
-#homeMenu,a{
+.home-header,a{
     color: black;
     display: flex;
-    justify-content: space-evenly;
     margin-top: 24px;
     text-align: center;
     transition: color 0.9s;
+    justify-content: space-evenly;
 }
 
 a:hover{
     color: white;
 }
 
-#logo{
+.menu-logo{
     /*logo takes 2*/
     flex-grow: 2; 
 }
 
-#imgLogo{
+.menu-logo-image{
     transition: rotate 0.9s;
 }
 
-#imgLogo:hover{
+.menu-logo-image:hover{
     rotate: 360deg;
 }
 
-#home,#courses,#about,#log,#sign{
-   /*everyone except logo takes 1*/
-   flex-grow: 1; 
+.home-grid{
+    grid-template-columns: 440px 616px;
+    grid-template-rows: repeat(3, 90px [row-start]);
 }
 
-#intro{
-    /*align center axe y FIXME: TODO:*/
-    align-content: center;     
-    column-gap: 48px;
-    display: grid;
-    grid-template-columns: 30% 40%;
-    grid-template-rows: repeat(3, 20% [row-start]);
-    /*align center axe x*/
-    justify-content: center; 
-    padding-top: 7%;
-    row-gap: 40px;
-}
-
-#citation{
-    margin-left: 2%;
-    margin-right: 2%;
+.citation-heading{
+    margin-left: 12px;
+    margin-right: 12px;
     text-align: center;   
 }
 
-#cit{
+.citation-button{
     /*axe y*/
     align-self: center;
     backdrop-filter: blur(15px);
@@ -69,56 +63,63 @@ a:hover{
     place-self: center;
 }
 
-#coursesButtonRel{
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    grid-column: 2;
+.courses-button{
     grid-row: 1;
-    height: 120px;
-    transition: all 0.4s;
 }
 
-#aboutButtonRel{
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    grid-column: 2;
+.about-button{
     grid-row: 2;
-    height: 120px;
 }
 
-#contactButtonRel{
+.contact-button{
+    grid-row: 3;
+}
+
+.buttons-helper{
     backdrop-filter: blur(15px);
     border-radius: 25px;
     grid-column: 2;
-    grid-row: 3;
     height: 120px;
-}
-
-#coursesButtonRel,#aboutButtonRel,#contactButtonRel{
     transition: all 0.9s;
 }
-#coursesButtonRel:hover,#aboutButtonRel:hover,#contactButtonRel:hover{
+
+.buttons-helper:hover{
     transform: scale(1.1);
 }
 
-#btnMenu{
+.menu-button{
     display: none;
     width:60px;
 }
 
 .button-icons{
     float: right;
-    width: 6%;
+    width: 45px;
 }
 
-#intro:not(.button-icons){
+.home-grid:not(.button-icons){
     float: left;
 }
 
-@media(max-width: 800px){
+.home-grid--helper{
+    /*align center axe y FIXME: TODO:*/
+    align-content: stretch;     
+    column-gap: 48px;
+    display: grid;
+    /*align center axe x*/
+    justify-content: center; 
+    row-gap: 40px;
+}
+
+.flex-grow--helper{
+    flex-grow: 1; 
+    justify-content: space-evenly;
+}
+
+@media(width < 900px){
     
 /*Menu*/
-    div#homeMenu{
+    div.home-header{
         align-self: stretch;
         backdrop-filter: blur(15px);
         display: block;
@@ -133,7 +134,7 @@ a:hover{
         z-index: 5;
     }
 
-    #btnMenu{
+    .menu-button{
         content: url("images/menu.svg");
         display: block;
         position: absolute;
@@ -145,51 +146,35 @@ a:hover{
         z-index: 10;
     }
 
+    .flex-grow{
+        /*everyone except logo takes 1*/
+        display: block;
+     }
+
     .menu-link{
-        padding-top: 15%;
+        padding-top: 100px;
     }
 
 /*GRID 1*/
    
-    div#intro{
-        /*align center axe y FIXME: TODO:*/
-        align-content: center;    
-        column-gap: 3%;
-        display: grid;
-        grid-template-columns: 80%;
-        grid-template-rows: repeat(6, 20%[row-start]);
-        /*align center axe x*/
-        justify-content: center; 
-        margin-top: 20%;
-        padding-top: 10%;
-        row-gap: 15%;
+    div.home-grid{
+        grid-template-columns: 350px;
+        grid-template-rows: repeat(6, 100px[row-start]);
     }
 
-    #cit{
-        /*axe y*/
-        align-self: center;
-        backdrop-filter: blur(15px);
-        border-radius: 25px;
-        grid-column: 1;
-        /*takes the 1st column, rows from 1 to 3*/
-        grid-row: 1/4; 
-        /*axe x*/
-        place-self: center;
-    }
-
-    #coursesButtonRel{                    
+    .courses-button{                    
         /*first button*/
         grid-row: 4;
         grid-column: 1;
     }
 
-    #aboutButtonRel{
+    .about-button{
         /*second button*/
         grid-row: 5;
         grid-column: 1;
     }
 
-    #contactButtonRel{
+    .contact-button{
         /*third button*/
         grid-row: 6;
         grid-column: 1;

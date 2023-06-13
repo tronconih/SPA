@@ -1,31 +1,40 @@
 <!DOCTYPE html>
     <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="all-container">
             
-            <!-- image that became visible when the window width is under 800px -->
-            <img src="" id="btnMenu" onclick = "menuMobile()">
+            <!-- image that became visible when the window width is under 900px -->
+            <img src="" id="menuButtonRef" class="menu-button" onclick="menuMobile()">
 
             <!-- MENU -->
-            <div id="homeMenu">
-                <a id="home" class="menu-link">Home</a>
-                <a id="courses" class="menu-link">Corsi</a>
-                <a id="about" class="menu-link">About</a>
-                <a id="logo" class="menu-link"><img src="images/logo.png" id="imgLogo"></a>
-                <a id="log" class="menu-link">Log In</a>
-                <a id="sign" class="menu-link">Sign Up</a>
+            <div id="homeHeaderRef" class="home-header">
+                <div class = "flex-grow flex-grow--helper">  
+                    <a id="homeLinkRef" class="menu-link">Home</a>
+                    <a id="coursesLinkRef" class="menu-link">Corsi</a>
+                    <a id="aboutLinkRef" class="menu-link">About</a>
+                </div>
+
+                <a id="menuLogoRef" class="menu-logo menu-link"><img src="images/logo.png" id="menuLogoImageRef" class="menu-logo-image"></a>
+                
+                <div class = "flex-grow flex-grow--helper">
+                    <a id="loginLinkRef" class="menu-link">Log In</a>
+                    <a id="signinLinkRef" class="menu-link">Sign Up</a>
+                </div>
             </div>
 
             <!-- Home page contained in a div and managed with a grid -->
-            <div id="intro">
-                <button id="cit"> <h2 id="citation"><b>" Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> 
+            <div id="homeGridRef" class="home-grid home-grid--helper">
+
+                <button id="citationButtonRef" class="citation-button"> <h2 id="citationHeadingRef" class="citation-heading"><b>" Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> 
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                     when an unknown printer took a galley of type and scrambled it to make a type specimen book. "</b></h2></button>
-                <button id="coursesButtonRel"> <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg"> </button>
-                <button id="aboutButtonRel"> <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg"> </button>
-                <button id="contactButtonRel"> <h3 id="contactButtonRel1">CONTATTI</h3> <img class="button-icons" src="images/user.svg"> </button>
+                <button id="coursesButtonRef" class="courses-button buttons-helper"> <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg"> </button>
+                <button id="aboutButtonRef" class="about-button buttons-helper"> <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg"> </button>
+                <button id="contactButtonRef" class="contact-button buttons-helper"> <h3 id="contactButtonRef1">CONTATTI</h3> <img class="button-icons" src="images/user.svg"> </button>
+           
             </div>
 
         </div>
