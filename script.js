@@ -54,10 +54,9 @@ function closeDrawer(){
     isMobileHeaderOpen = false;
 }
 
-let w = window.outerWidth;
 //function created to manage the problem of the css priorities (js-CSS > css)
 function manageWindowResize(){
-    if(w > 900){
+    if(w > window.outerWidth){
         isMobileHeaderOpen = false;
         document.getElementsByTagName("BODY")[0].style.overflowY = "auto";
         closeDrawer();
