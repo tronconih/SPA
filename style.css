@@ -1,8 +1,20 @@
-.flex-grow{
-    /*everyone except logo takes 1*/
+.row{
     display: flex;
+    flex-direction: row;
  }
 
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.justify-evenly{
+    justify-content: space-evenly;
+}
 /*~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~*/
 
 html{
@@ -14,29 +26,38 @@ html{
     background-size: cover;
 }
 
-.home-header,a{
-    color: black;
+body{
+    overflow-y: auto;
+}
+/*--------------Header--------------*/
+.home-header{
+    align-items: center;
     display: flex;
     margin-top: 24px;
     text-align: center;
     transition: color 0.9s;
     justify-content: space-evenly;
+    height: 50px;
+}
+
+a{
+    transition: color 0.9s;
 }
 
 a:hover{
     color: white;
 }
 
-.menu-logo{
+.header-logo{
     /*logo takes 2*/
     flex-grow: 2; 
 }
 
-.menu-logo-image{
+.header-logo-image{
     transition: rotate 0.9s;
 }
 
-.menu-logo-image:hover{
+.header-logo-image:hover{
     rotate: 360deg;
 }
 
@@ -44,7 +65,19 @@ a:hover{
     grid-template-columns: 440px 616px;
     grid-template-rows: repeat(3, 90px [row-start]);
 }
+/*--------------Drawer--------------*/
+.home-drawer{
+    align-items: center;
+    display: flex;
+    margin-top: 24px;
+    text-align: center;
+    transition: color 0.9s;
+    justify-content: space-evenly;
+    height: 50px;
+    display: none;
+}
 
+/*--------------Home-Grid--------------*/
 .citation-heading{
     margin-left: 12px;
     margin-right: 12px;
@@ -75,7 +108,7 @@ a:hover{
     grid-row: 3;
 }
 
-.buttons-helper{
+.home-buttons-code-binder{
     backdrop-filter: blur(15px);
     border-radius: 25px;
     grid-column: 2;
@@ -83,11 +116,11 @@ a:hover{
     transition: all 0.9s;
 }
 
-.buttons-helper:hover{
+.home-buttons-code-binder:hover{
     transform: scale(1.1);
 }
 
-.menu-button{
+.drawer-toggle{
     display: none;
     width:60px;
 }
@@ -101,7 +134,7 @@ a:hover{
     float: left;
 }
 
-.home-grid--helper{
+.home-grid--binder{
     /*align center axe y FIXME: TODO:*/
     align-content: stretch;     
     column-gap: 48px;
@@ -111,18 +144,22 @@ a:hover{
     row-gap: 40px;
 }
 
-.flex-grow--helper{
+.flex-grow--binder{
     flex-grow: 1; 
     justify-content: space-evenly;
 }
 
 @media(width < 900px){
     
-/*Menu*/
+/*header*/
     div.home-header{
+        display: none;
+    }
+    div.home-drawer{
         align-self: stretch;
         backdrop-filter: blur(15px);
-        display: block;
+        display: flex;
+        flex-direction: column;
         height: 0;
         left: -100%;
         margin-top: 0px;
@@ -130,11 +167,13 @@ a:hover{
         top: 0;
         /*animation of the top that switch from -200 to 0 px*/
         transition: all 1s ease-in-out; 
-        visibility: visible;
+        visibility: hidden;
         z-index: 5;
+        /*the overflow auto is useful for the scroll of an element that its longer than necessary*/
+        overflow: auto;
     }
 
-    .menu-button{
+    .drawer-toggle{
         content: url("images/menu.svg");
         display: block;
         position: absolute;
@@ -151,8 +190,9 @@ a:hover{
         display: block;
      }
 
-    .menu-link{
-        padding-top: 100px;
+    .drawer-link{
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 
 /*GRID 1*/
