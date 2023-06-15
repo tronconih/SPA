@@ -25,39 +25,45 @@
         </div>
     </div>
 
-    <!-- image that became visible when the window width is under 900px -->
-    <!-- src hadn't been written dawn because it will be modified from the css just when the window size is less than 900px-->
-    <img id="drawerToggleRef" class="drawer-toggle" onclick="headerMobile()">
-
-    <!-- drawer -->
-    <div id="homeDrawerRef" class="home-drawer">
-        <a id="homeLinkDrawerRef" class="drawer-link">Home</a>
-        <a id="coursesLinkDrawerRef" class="drawer-link">Corsi</a>
-        <a id="aboutLinkDrawerRef" class="drawer-link">About</a>
-        <a id="loginLinkDrawerRef" class="drawer-link">Log In</a>
-        <a iid="signinLinkDrawerRef" class="drawer-link">Sign Up</a>
-    </div>
-
-    <!-- Home page contained in a div and managed with a grid -->
-    <div class="flex-grow column items-center justify-center page-wrapper">
+    <!-- grid wrapper -->
+    <div class="flex-grow column items-center justify-center grid-wrapper">
+        <!-- Home page contained in a div and managed with a grid -->
         <div id="homeGridRef" class="home-grid">
-            <button id="citationButtonRef" class="citation-button">
+            <div id="citationDivRef" class="citation-div">
                 <h2 id="citationHeadingRef" class="citation-heading"><b>" Lorem Ipsum is simply dummy text of the
                         printing and typesetting industry.<br>
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         "</b></h2>
-            </button>
+            </div>
 
-            <button id="coursesButtonRef" class="courses-button home-buttons-code-binder">
+            <button id="coursesButtonRef" class="courses-button home-button">
                 <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg">
             </button>
-            <button id="aboutButtonRef" class="about-button home-buttons-code-binder">
+
+            <button id="aboutButtonRef" class="about-button home-button">
                 <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg">
             </button>
-            <button id="contactButtonRef" class="contact-button home-buttons-code-binder">
+
+            <button id="contactButtonRef" class="contact-button home-button">
                 <h3 id="contactButtonRef1">CONTATTI</h3> <img class="button-icons" src="images/user.svg">
             </button>
+        </div>
+    </div>
+
+    <!-- image that became visible when the window width is under 900px -->
+    <!-- src hadn't been written dawn because it will be modified from the css just when the window size is less than 900px-->
+    <img id="drawerToggleRef" class="drawer-toggle" onclick="drawerMobile()">
+
+    <!-- drawer wrapper -->
+    <div id="drawerWrapperRef" class="drawer-wrapper">
+        <!-- drawer -->
+        <div id="homeDrawerRef" class="home-drawer">
+            <a id="homeLinkDrawerRef" class="drawer-link">Home</a>
+            <a id="coursesLinkDrawerRef" class="drawer-link">Corsi</a>
+            <a id="aboutLinkDrawerRef" class="drawer-link">About</a>
+            <a id="loginLinkDrawerRef" class="drawer-link">Log In</a>
+            <a iid="signinLinkDrawerRef" class="drawer-link">Sign Up</a>
         </div>
     </div>
 
