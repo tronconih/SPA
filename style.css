@@ -26,10 +26,6 @@
 
 /*~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~*/
 
-.page-container {
-  background-color: red;
-}
-
 html {
   /*wallpaper adaptation found on css tricks*/
   background: url(images/wallpaper.jpg) no-repeat center center fixed;
@@ -41,13 +37,20 @@ html {
 
 /*--------------Header--------------*/
 .home-header {
+  position: fixed;
   align-items: center;
+  background-color: #ebebeb;
+  /* backdrop-filter: blur(15px); */
   display: flex;
   margin-top: 24px;
   text-align: center;
   transition: color 0.9s;
   justify-content: space-evenly;
   height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 a {
@@ -55,7 +58,7 @@ a {
 }
 
 a:hover {
-  color: white;
+  color: #228b22;
 }
 
 .header-logo {
@@ -71,27 +74,24 @@ a:hover {
   rotate: 360deg;
 }
 
-.page-wrapper{
-  padding: 24px;
-}
-
-.home-grid {
-  grid-template-columns: 1fr 1fr;
-  /*align center axe y FIXME: TODO:*/
-  /* align-content: stretch; */
-  column-gap: 24px;
-  display: grid;
-  /*align center axe x*/
-  justify-content: center;
-  row-gap: 24px;
-}
-
 body {
   margin: 0;
   height: 100vh;
 }
 
 /*--------------Drawer--------------*/
+.grid-wrapper{
+  padding: 24px;
+}
+
+.home-grid {
+  grid-template-columns: 0.30fr 0.50fr;
+  column-gap: 24px;
+  display: grid;
+  justify-content: center;
+  row-gap: 24px;
+}
+
 .home-drawer {
   align-items: center;
   display: flex;
@@ -100,7 +100,13 @@ body {
   transition: color 0.9s;
   justify-content: space-evenly;
   height: 50px;
-  display: none;
+}
+
+.drawer-wrapper{
+  overflow: auto;
+  position: absolute;
+  left: -110vw;
+  transition: left 1s ease;
 }
 
 /*--------------Home-Grid--------------*/
@@ -110,31 +116,42 @@ body {
   text-align: center;
 }
 
-.citation-button {
-  /*axe y*/
-  align-self: center;
+.citation-div {
+  display: flex;
+  background-color: rgba(255,255,255,0.5);
   backdrop-filter: blur(15px);
   border-radius: 25px;
-  grid-column: 1;
-  /*it takes the 1st column, rows from 1 to 3*/
-  grid-row: 1/4;
-  /*axe x*/
   place-self: center;
+  /* indicates the occupied area (from row 1 col 1, to row 3 col 1) */
+  grid-area: 1/1/4/1;
+  /* adapt the div to the area in which is contained */
+  align-self: stretch;
+  /* align contained items on the y axe */
+  align-items: center;
 }
 
 .courses-button {
   grid-row: 1;
+  background-color: rgb(101,184,66,0.5);
+  backdrop-filter: blur(15px);
+
 }
 
 .about-button {
   grid-row: 2;
+  background-color: rgba(128,161,66,0.5);
+  backdrop-filter: blur(15px);
+
 }
 
 .contact-button {
   grid-row: 3;
+  background-color: rgba(89,124,43,0.5);  
+  backdrop-filter: blur(15px);
+
 }
 
-.home-buttons-code-binder {
+.home-button {
   backdrop-filter: blur(15px);
   border-radius: 25px;
   grid-column: 2;
@@ -142,8 +159,8 @@ body {
   transition: all 0.9s;
 }
 
-.home-buttons-code-binder:hover {
-  transform: scale(1.1);
+.home-button:hover {
+  transform: scale(1.05);
 }
 
 .drawer-toggle {
@@ -162,22 +179,19 @@ body {
 
 @media (width < 900px) {
   /*header*/
-  div.home-header {
+  .home-header {
     display: none;
   }
-  div.home-drawer {
+  .home-drawer {
     align-self: stretch;
     backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
-    height: 0;
-    left: -100%;
+    height: 100vh;
+    width: 100vw;
     margin-top: 0px;
-    position: relative;
     top: 0;
     /*animation of the top that switch from -200 to 0 px*/
-    transition: all 1s ease-in-out;
-    visibility: hidden;
     z-index: 5;
     /*the overflow auto is useful for the scroll of an element that its longer than necessary*/
     overflow: auto;
@@ -202,7 +216,7 @@ body {
 
   /*GRID 1*/
 
-  div.home-grid {
+  .home-grid {
     grid-template-columns: 350px;
     grid-template-rows: repeat(6, 100px[row-start]);
   }
