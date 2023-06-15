@@ -1,3 +1,22 @@
+.row{
+    display: flex;
+    flex-direction: row;
+ }
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.justify-evenly{
+    justify-content: space-evenly;
+}
+/*~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~*/
+
 html{
     /*wallpaper adaptation found on css tricks*/
     -moz-background-size: cover;
@@ -7,12 +26,21 @@ html{
     background: url(images/wallpaper.jpg) no-repeat center center fixed; 
 }
 
-#menu,a{
-    color: black;
+body{
+    overflow-y: auto;
+}
+/*--------------Header--------------*/
+.home-header{
+    align-items: center;
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 1%;
+    margin-top: 24px;
     text-align: center;
+    transition: color 0.9s;
+    justify-content: space-evenly;
+    height: 50px;
+}
+
+a{
     transition: color 0.9s;
 }
 
@@ -20,16 +48,16 @@ a:hover{
     color: white;
 }
 
-#logo{
+.header-logo{
     /*logo takes 2*/
     flex-grow: 2; 
 }
 
-#imgLogo{
+.header-logo-image{
     transition: rotate 0.9s;
 }
 
-#imgLogo:hover{
+.header-logo-image:hover{
     rotate: 360deg;
 }
 
@@ -70,9 +98,59 @@ a:hover{
     background-image: url("images/smile.png");
 }
 
-#name{
-    grid-column: 2;
+.home-grid{
+    grid-template-columns: 440px 616px;
+    grid-template-rows: repeat(3, 90px [row-start]);
+}
+/*--------------Drawer--------------*/
+.home-drawer{
+    align-items: center;
+    display: flex;
+    margin-top: 24px;
+    text-align: center;
+    transition: color 0.9s;
+    justify-content: space-evenly;
+    height: 50px;
+    display: none;
+}
+
+/*--------------Home-Grid--------------*/
+.citation-heading{
+    margin-left: 12px;
+    margin-right: 12px;
+    text-align: center;   
+}
+
+.citation-button{
+    /*axe y*/
+    align-self: center;
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    grid-column: 1;
+    /*it takes the 1st column, rows from 1 to 3*/
+    grid-row: 1/4;
+    /*axe x*/ 
+    place-self: center;
+}
+
+.courses-button{
     grid-row: 1;
+}
+
+.about-button{
+    grid-row: 2;
+}
+
+.contact-button{
+    grid-row: 3;
+}
+
+.home-buttons-code-binder{
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    grid-column: 2;
+    height: 120px;
+    transition: all 0.9s;
 }
 
 #email{
@@ -116,82 +194,107 @@ a:hover{
     width:60px;
 }
 
-@media(max-width: 800px){
-    
-    /*Menu*/
-        div#menu{
-            align-self: stretch;
-            backdrop-filter: blur(15px);
-            display: block;
-            height: 0;
-            left: -100%;
-            margin-top: 0px;
-            position: relative;
-            top: 0;
-            /*animation of the top that switch from -200 to 0 px*/
-            transition: all 1s ease-in-out;
-            visibility: visible;
-            z-index: 5;
-        }
-    
-        #menuButtonRel{
-            content: url("images/menu.svg");
-            display: block;
-            position: absolute;
-            /*assignments to reset the transition*/
-            rotate: 0deg; 
-            /* animation of the top that switch from -200 to 0 px*/
-            transition: rotate 0.5s; 
-            width: 60px;
-            z-index: 10;
-        }
-    
-        .menu-link{
-            padding-top: 15%;
-        }
-    
-    /*GRID 2*/
-       
-        div#grill2{
-            align-content: space-between;
-            column-gap: 3%;
-            display: grid;
-            grid-template-columns: 50% 30%;
-            grid-template-rows: repeat(4, 50%[row-start]);
-            /*align center axe x*/
-            justify-content: center; 
-            padding-top: 5%;
-            row-gap: 15%;
-        }
-    
-        #myPic{
-            /*it takes the 1st column, rows from 1 to 3*/
-            grid-column: 1;
-            grid-row: 1/4; 
-        }
-    
-        #name{                    
-            /*first button*/
-            grid-column: 2;
-            grid-row: 1;
-        }
-    
-        #email{
-            /*second button*/
-            grid-column: 2;
-            grid-row: 2;
-        }
-    
-        #number{
-            /*third button*/
-            grid-column: 2;
-            grid-row: 3;
-        } 
+.home-buttons-code-binder:hover{
+    transform: scale(1.1);
+}
 
-        #socials{
-            /*third button*/
-            grid-column: 1/3;
-            grid-row: 4;
-        }
+.drawer-toggle{
+    display: none;
+    width:60px;
+}
+
+.button-icons{
+    float: right;
+    width: 45px;
+}
+
+.home-grid:not(.button-icons){
+    float: left;
+}
+
+.home-grid--binder{
+    /*align center axe y FIXME: TODO:*/
+    align-content: stretch;     
+    column-gap: 48px;
+    display: grid;
+    /*align center axe x*/
+    justify-content: center; 
+    row-gap: 40px;
+}
+
+.flex-grow--binder{
+    flex-grow: 1; 
+    justify-content: space-evenly;
+}
+
+@media(width < 900px){
     
+/*header*/
+    div.home-header{
+        display: none;
+    }
+    div.home-drawer{
+        align-self: stretch;
+        backdrop-filter: blur(15px);
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        left: -100%;
+        margin-top: 0px;
+        position: relative;
+        top: 0;
+        /*animation of the top that switch from -200 to 0 px*/
+        transition: all 1s ease-in-out; 
+        visibility: hidden;
+        z-index: 5;
+        /*the overflow auto is useful for the scroll of an element that its longer than necessary*/
+        overflow: auto;
+    }
+
+    .drawer-toggle{
+        content: url("images/menu.svg");
+        display: block;
+        position: absolute;
+        /*assignments to reset the transition*/
+        rotate: 0deg; 
+        /* animation of the top that switch from -200 to 0 px*/
+        transition: rotate 0.5s; 
+        width: 60px;
+        z-index: 10;
+    }
+
+    .flex-grow{
+        /*everyone except logo takes 1*/
+        display: block;
+     }
+
+    .drawer-link{
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+/*GRID 1*/
+   
+    div.home-grid{
+        grid-template-columns: 350px;
+        grid-template-rows: repeat(6, 100px[row-start]);
+    }
+
+    .courses-button{                    
+        /*first button*/
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    .about-button{
+        /*second button*/
+        grid-row: 5;
+        grid-column: 1;
+    }
+
+    .contact-button{
+        /*third button*/
+        grid-row: 6;
+        grid-column: 1;
+    }
 }

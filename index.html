@@ -1,23 +1,51 @@
 <!DOCTYPE html>
     <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div class="all-container">
+    <body onresize = "manageWindowResize()">
+        <div class="page-container">
             
-            <!-- image that became visible when the window width is under 800px -->
-            <img src="" id="menuButtonRel" onclick = "menuMobile()">
+            <!-- image that became visible when the window width is under 900px -->
+            <!-- src hadn't been written dawn because it will be modified from the css just when the window size is less than 900px-->
+            <img id="drawerToggleRef" class="drawer-toggle" onclick="headerMobile()">
 
-            <!-- MENU -->
-            <div id="menu">
-                <a id="home" class="menu-link">Home</a>
-                <a id="courses" class="menu-link">Corsi</a>
-                <a id="about" class="menu-link">About</a>
-                <a id="logo" class="menu-link"><img src="images/logo.png" id="imgLogo"></a>
-                <a id="log" class="menu-link">Log In</a>
-                <a id="sign" class="menu-link">Sign Up</a>
+            <!-- header -->
+            <div id="homeHeaderRef" class="home-header">
+                <div class = "flex-grow flex-grow--binder justify-evenly row">  
+                    <a id="homeLinkRef" class="header-link home-header">Home</a>
+                    <a id="coursesLinkRef" class="header-link home-header">Corsi</a>
+                    <a id="aboutLinkRef" class="header-link home-header">About</a>
+                </div>
+
+                <a id="headerLogoRef" class="header-logo header-link"><img src="images/logo.png" id="headerLogoImageRef" class="header-logo-image"></a>
+                
+                <div class = "flex-grow flex-grow--binder justify-evenly row">
+                    <a id="loginLinkRef" class="header-link home-header">Log In</a>
+                    <a id="signinLinkRef" class="header-link home-header">Sign Up</a>
+                </div>
             </div>
 
+            <!-- drawer -->
+            <div id="homeDrawerRef" class="home-drawer">
+                    <a id="homeLinkDrawerRef" class="drawer-link">Home</a>
+                    <a id="coursesLinkDrawerRef" class="drawer-link">Corsi</a>
+                    <a id="aboutLinkDrawerRef" class="drawer-link">About</a>                
+                    <a id="loginLinkDrawerRef" class="drawer-link">Log In</a>
+                    <a iid="signinLinkDrawerRef" class="drawer-link">Sign Up</a>
+            </div>
+
+            <!-- Home page contained in a div and managed with a grid -->
+            <div id="homeGridRef" class="home-grid home-grid--binder">
+
+                <button id="citationButtonRef" class="citation-button"> <h2 id="citationHeadingRef" class="citation-heading"><b>" Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. "</b></h2></button>
+                <button id="coursesButtonRef" class="courses-button home-buttons-code-binder"> <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg"> </button>
+                <button id="aboutButtonRef" class="about-button home-buttons-code-binder"> <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg"> </button>
+                <button id="contactButtonRef" class="contact-button home-buttons-code-binder"> <h3 id="contactButtonRef1">CONTATTI</h3> <img class="button-icons" src="images/user.svg"> </button>
+           
+            </div>
             <!-- Home page contained in a div and managed with a grid -->
             <div id="contacts">
                 <h1 id="subtitle">Contatti.</h1>
@@ -43,7 +71,7 @@
                 </div>
 
             </div>
-
+        
         </div>
 
         <script src="script.js"></script>
