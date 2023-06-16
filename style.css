@@ -1,300 +1,315 @@
-.row{
-    display: flex;
-    flex-direction: row;
- }
-
-.column{
-    display: flex;
-    flex-direction: column;
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
-.flex-grow{
-    flex-grow: 1;
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
-.justify-evenly{
-    justify-content: space-evenly;
+.flex-grow {
+  flex-grow: 1;
 }
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
 /*~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~||~~*/
 
-html{
-    /*wallpaper adaptation found on css tricks*/
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background: url(images/wallpaper.jpg) no-repeat center center fixed; 
+html {
+  /*wallpaper adaptation found on css tricks*/
+  background: url(images/wallpaper.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
 }
 
-body{
-    overflow-y: auto;
-}
 /*--------------Header--------------*/
-.home-header{
-    align-items: center;
-    display: flex;
-    margin-top: 24px;
-    text-align: center;
-    transition: color 0.9s;
-    justify-content: space-evenly;
-    height: 50px;
-}
+.home-header {
+  align-items: center;
+  background-color: #ebebeb;
+  display: flex;
+  height: 50px;
+  left: 0;
+  margin-top: 24px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transition: color 0.9s;
+  z-index: 2;
 
-a{
-    transition: color 0.9s;
-}
-
-a:hover{
-    color: white;
-}
-
-.header-logo{
-    /*logo takes 2*/
-    flex-grow: 2; 
-}
-
-.header-logo-image{
-    transition: rotate 0.9s;
-}
-
-.header-logo-image:hover{
-    rotate: 360deg;
-}
-
-.menu-link:not(#logo){
-    /*everyone except logo takes 1*/
-    flex-grow: 1; 
-}
-
-#grill2{
-    align-content: space-between;
-    column-gap: 3%;
-    display: grid;
-    grid-template-columns: 15% 35%;
-    grid-template-rows: repeat(2, 20% [row-start]);
-    /*align center axe x*/
-    justify-content: center; 
-    padding-top: 5%;
-    row-gap: 15%;
-}
-
-#myPic{
-    backdrop-filter: blur(15px);
-    background-image: url("images/mySelf.png");
-    background-repeat: no-repeat;
-    background-size: cover; 
-    border-radius: 25px;
-    /*it takes the 1st column, rows from 1 to 4*/
-    grid-column: 1;
-    grid-row: 1/5; 
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-image 1s ease-in-out;
-    width: 100%;
-}
-
-#myPic:hover{
-    background-image: url("images/smile.png");
-}
-
-.home-grid{
-    grid-template-columns: 440px 616px;
-    grid-template-rows: repeat(3, 90px [row-start]);
-}
-/*--------------Drawer--------------*/
-.home-drawer{
-    align-items: center;
-    display: flex;
-    margin-top: 24px;
-    text-align: center;
-    transition: color 0.9s;
-    justify-content: space-evenly;
-    height: 50px;
+  @media (width < 900px) {
     display: none;
+  }
+}
+
+a {
+  transition: color 0.9s;
+}
+
+a:hover {
+  color: #228b22;
+}
+
+.header-logo {
+  /*logo takes 2*/
+  flex-grow: 2;
+}
+
+.header-logo-image {
+  transition: rotate 0.9s;
+}
+
+.header-logo-image:hover {
+  rotate: 360deg;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+/*--------------Drawer--------------*/
+.home-drawer {
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* the left is equal to -110 vw because it's needed to make the transition begin from the left part of the window */
+  left: -110vw;
+  overflow: auto;
+  /* prevent the overscroll: if the user overscroll on the drawer, it will cause the scroll of the home, so to prevent the scrolling of multiple elements i've used the overscroll property */
+  overscroll-behavior: contain;
+  position: fixed;
+  text-align: center;
+  transition: left 1s ease;
+  width: 100vw;
+}
+
+.drawer-link {
+  @media (width < 900px) {
+    padding-bottom: 75px;
+    padding-top: 75px;
+  }
+}
+
+.drawer-toggle {
+  display: none;
+  width: 60px;
+
+  @media (width < 900px) {
+    content: url("images/menu.svg");
+    display: block;
+    position: absolute;
+    /*assignments to reset the transition*/
+    rotate: 0deg;
+    /* transition of the top that switch from -200 to 0 px*/
+    transition: rotate 0.5s;
+    width: 60px;
+    z-index: 10;
+  }
 }
 
 /*--------------Home-Grid--------------*/
-.citation-heading{
-    margin-left: 12px;
-    margin-right: 12px;
-    text-align: center;   
-}
-
-.citation-button{
-    /*axe y*/
-    align-self: center;
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    grid-column: 1;
-    /*it takes the 1st column, rows from 1 to 3*/
-    grid-row: 1/4;
-    /*axe x*/ 
-    place-self: center;
-}
-
-.courses-button{
-    grid-row: 1;
-}
-
-.about-button{
-    grid-row: 2;
-}
-
-.contact-button{
-    grid-row: 3;
-}
-
-.home-buttons-code-binder{
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    grid-column: 2;
-    height: 120px;
-    transition: all 0.9s;
-}
-
-#email{
-    grid-column: 2;
-    grid-row: 2;
-}
-
-#number{
-    grid-column: 2;
-    grid-row: 3;
-}
-
-.contact-elements{
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    height: 80px;
-}
-
-#socials{
-    /*axe y*/
-    align-self: center;
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
+.citation-div {
     display: flex;
-    grid-column: 2;
-    grid-row: 4;
-    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    place-self: center;
+    /* indicates the occupied area (from row 1 col 1, to row 3 col 1) */
+    grid-area: 1/1/4/1;
+    /* adapt the div to the area in which is contained */
+    align-self: stretch;
+    /* align contained items on the y axe */
+    align-items: center;
 }
 
-.social-icon{
-    margin-right: 5%;
+.grid-wrapper {
+  padding: 24px;
 }
 
-#subtitle{
-    padding-left: 15%;
-    padding-top: 5%;
+.home-grid {
+  column-gap: 24px;
+  display: grid;
+  grid-template-columns: 0.3fr 0.5fr;
+  justify-content: center;
+  row-gap: 24px;
+
+  @media (width < 900px) {
+    grid-template-columns: 350px;
+    grid-template-rows: repeat(6, 100px[row-start]);
+  }
 }
 
-#menuButtonRel{
-    display: none;
-    width:60px;
+.citation-heading {
+    margin: 0 12px;
+    text-align: center;
+  }
+  
+
+.home-button {
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  /* nullifies the style of buttons's borders */
+  border-style: none;
+  grid-column: 2;
+  height: 120px;
+  transition: all 0.9s;
 }
 
-.home-buttons-code-binder:hover{
-    transform: scale(1.1);
+.home-button:hover {
+  transform: scale(1.05);
 }
 
-.drawer-toggle{
-    display: none;
-    width:60px;
-}
-
-.button-icons{
-    float: right;
-    width: 45px;
-}
-
-.home-grid:not(.button-icons){
-    float: left;
-}
-
-.home-grid--binder{
-    /*align center axe y FIXME: TODO:*/
-    align-content: stretch;     
-    column-gap: 48px;
-    display: grid;
-    /*align center axe x*/
-    justify-content: center; 
-    row-gap: 40px;
-}
-
-.flex-grow--binder{
-    flex-grow: 1; 
-    justify-content: space-evenly;
-}
-
-@media(width < 900px){
-    
-/*header*/
-    div.home-header{
-        display: none;
-    }
-    div.home-drawer{
-        align-self: stretch;
-        backdrop-filter: blur(15px);
-        display: flex;
-        flex-direction: column;
-        height: 0;
-        left: -100%;
-        margin-top: 0px;
-        position: relative;
-        top: 0;
-        /*animation of the top that switch from -200 to 0 px*/
-        transition: all 1s ease-in-out; 
-        visibility: hidden;
-        z-index: 5;
-        /*the overflow auto is useful for the scroll of an element that its longer than necessary*/
-        overflow: auto;
-    }
-
-    .drawer-toggle{
-        content: url("images/menu.svg");
-        display: block;
-        position: absolute;
-        /*assignments to reset the transition*/
-        rotate: 0deg; 
-        /* animation of the top that switch from -200 to 0 px*/
-        transition: rotate 0.5s; 
-        width: 60px;
-        z-index: 10;
-    }
-
-    .flex-grow{
-        /*everyone except logo takes 1*/
-        display: block;
-     }
-
-    .drawer-link{
-        padding-top: 75px;
-        padding-bottom: 75px;
-    }
-
-/*GRID 1*/
-   
-    div.home-grid{
-        grid-template-columns: 350px;
-        grid-template-rows: repeat(6, 100px[row-start]);
-    }
-
-    .courses-button{                    
-        /*first button*/
+.courses-button {
+    backdrop-filter: blur(15px);
+    background-color: rgb(101, 184, 66, 0.5);
+    grid-row: 1;
+  
+    @media (width < 900px) {
+        grid-column: 1;
         grid-row: 4;
-        grid-column: 1;
     }
+  }
+  
+  .about-button {
+    backdrop-filter: blur(15px);
+    background-color: rgba(128, 161, 66, 0.5);
+    grid-row: 2;
 
-    .about-button{
-        /*second button*/
+    @media (width < 900px) {
+        grid-column: 1;
         grid-row: 5;
-        grid-column: 1;
     }
+  }
+  
+  .contact-button {
+    backdrop-filter: blur(15px);
+    background-color: rgba(89, 124, 43, 0.5);
+    grid-row: 3;
 
-    .contact-button{
-        /*third button*/
+    @media (width < 900px) {
         grid-row: 6;
         grid-column: 1;
     }
+  }
+
+.button-icons {
+  float: right;
+  width: 45px;
+}
+
+/*--------------Contacts-Grid--------------*/
+.contact-grid {
+  column-gap: 24px;
+  display: grid;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: repeat(2, 20% [row-start]);
+  justify-content: center;
+  row-gap: 24px;
+
+  @media (width < 900px) {
+    grid-template-columns: 350px;
+    grid-template-rows: 150px [row-start] 150px [row-start] 75px [row-start] 75px [row-start] 75px [row-start] 75px [row-start];
+  }
+}
+
+.contact-picture {
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: url("images/mySelf.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  grid-column: 1;
+  grid-row: 1/5;
+  height: 100%;
+  /*prende la colonna 1, righe dalla 1 alla 4*/
+  margin: unset auto;
+  transition: background-image 1s ease-in-out;
+  width: 100%;
+
+  @media (width < 900px) {
+    grid-column: 1;
+    grid-row: 1/3;
+  }
+}
+
+.contact-picture:hover {
+  background-image: url("images/smile.png");
+}
+
+.contact-name {
+  background-color: rgb(101, 184, 66, 0.5);
+  grid-column: 2;
+  grid-row: 1;
+
+  @media (width < 900px) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+.contact-mail {
+  background-color: rgba(128, 161, 66, 0.5);
+  grid-column: 2;
+  grid-row: 2;
+
+  @media (width < 900px) {
+    grid-column: 1;
+    grid-row: 4;
+  }
+}
+
+.contact-number {
+  background-color: rgba(89, 124, 43, 0.5);
+  grid-column: 2;
+  grid-row: 3;
+
+  @media (width < 900px) {
+    grid-column: 1;
+    grid-row: 5;
+  }
+}
+
+.contact-social {
+  background-color: rgba(67, 98, 26, 0.5);
+  grid-column: 2;
+  grid-row: 4;
+
+  @media (width < 900px) {
+    grid-column: 1;
+    grid-row: 6;
+  }
+}
+
+.social-icon {
+  display: block;
+  margin: auto 10px auto 10px;
+}
+
+.contact-title {
+  padding-left: 15%;
+  padding-top: 5%;
+}
+
+.contact-element {
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  display: flex;
+  height: 80px;
+  justify-content: center;
 }
