@@ -29,28 +29,30 @@
 html {
   /*wallpaper adaptation found on css tricks*/
   background: url(images/wallpaper.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
 }
 
 /*--------------Header--------------*/
 .home-header {
-  position: fixed;
   align-items: center;
   background-color: #ebebeb;
-  /* backdrop-filter: blur(15px); */
   display: flex;
-  margin-top: 24px;
-  text-align: center;
-  transition: color 0.9s;
-  justify-content: space-evenly;
   height: 50px;
-  top: 0;
   left: 0;
+  margin-top: 24px;
+  position: fixed;
   right: 0;
+  text-align: center;
+  top: 0;
+  transition: color 0.9s;
   z-index: 2;
+
+  @media (width < 900px) {
+    display: none;
+  }
 }
 
 a {
@@ -80,80 +82,89 @@ body {
 }
 
 /*--------------Drawer--------------*/
-.grid-wrapper{
+.home-drawer {
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* the left is equal to -110 vw because it's needed to make the transition begin from the left part of the window */
+  left: -110vw;
+  overflow: auto;
+  /* prevent the overscroll: if the user overscroll on the drawer, it will cause the scroll of the home, so to prevent the scrolling of multiple elements i've used the overscroll property */
+  overscroll-behavior: contain;
+  position: fixed;
+  text-align: center;
+  transition: left 1s ease;
+  width: 100vw;
+}
+
+.drawer-link {
+  @media (width < 900px) {
+    padding-bottom: 75px;
+    padding-top: 75px;
+  }
+}
+
+.drawer-toggle {
+  display: none;
+  width: 60px;
+
+  @media (width < 900px) {
+    content: url("images/menu.svg");
+    display: block;
+    position: absolute;
+    /*assignments to reset the transition*/
+    rotate: 0deg;
+    /* transition of the top that switch from -200 to 0 px*/
+    transition: rotate 0.5s;
+    width: 60px;
+    z-index: 10;
+  }
+}
+
+/*--------------Home-Grid--------------*/
+.citation-div {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    place-self: center;
+    /* indicates the occupied area (from row 1 col 1, to row 3 col 1) */
+    grid-area: 1/1/4/1;
+    /* adapt the div to the area in which is contained */
+    align-self: stretch;
+    /* align contained items on the y axe */
+    align-items: center;
+}
+
+.grid-wrapper {
   padding: 24px;
 }
 
 .home-grid {
-  grid-template-columns: 0.30fr 0.50fr;
   column-gap: 24px;
   display: grid;
+  grid-template-columns: 0.3fr 0.5fr;
   justify-content: center;
   row-gap: 24px;
+
+  @media (width < 900px) {
+    grid-template-columns: 350px;
+    grid-template-rows: repeat(6, 100px[row-start]);
+  }
 }
 
-.home-drawer {
-  align-items: center;
-  display: flex;
-  margin-top: 24px;
-  text-align: center;
-  transition: color 0.9s;
-  justify-content: space-evenly;
-  height: 50px;
-}
-
-.drawer-wrapper{
-  overflow: auto;
-  position: absolute;
-  left: -110vw;
-  transition: left 1s ease;
-}
-
-/*--------------Home-Grid--------------*/
 .citation-heading {
-  margin-left: 12px;
-  margin-right: 12px;
-  text-align: center;
-}
-
-.citation-div {
-  display: flex;
-  background-color: rgba(255,255,255,0.5);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  place-self: center;
-  /* indicates the occupied area (from row 1 col 1, to row 3 col 1) */
-  grid-area: 1/1/4/1;
-  /* adapt the div to the area in which is contained */
-  align-self: stretch;
-  /* align contained items on the y axe */
-  align-items: center;
-}
-
-.courses-button {
-  grid-row: 1;
-  background-color: rgb(101,184,66,0.5);
-  backdrop-filter: blur(15px);
-
-}
-
-.about-button {
-  grid-row: 2;
-  background-color: rgba(128,161,66,0.5);
-  backdrop-filter: blur(15px);
-
-}
-
-.contact-button {
-  grid-row: 3;
-  background-color: rgba(89,124,43,0.5);  
-  backdrop-filter: blur(15px);
-
-}
+    margin: 0 12px;
+    text-align: center;
+  }
+  
 
 .home-button {
   backdrop-filter: blur(15px);
   border-radius: 25px;
+  /* nullifies the style of buttons's borders */
+  border-style: none;
   grid-column: 2;
   height: 120px;
   transition: all 0.9s;
@@ -163,79 +174,142 @@ body {
   transform: scale(1.05);
 }
 
-.drawer-toggle {
-  display: none;
-  width: 60px;
-}
+.courses-button {
+    backdrop-filter: blur(15px);
+    background-color: rgb(101, 184, 66, 0.5);
+    grid-row: 1;
+  
+    @media (width < 900px) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+  }
+  
+  .about-button {
+    backdrop-filter: blur(15px);
+    background-color: rgba(128, 161, 66, 0.5);
+    grid-row: 2;
+
+    @media (width < 900px) {
+        grid-column: 1;
+        grid-row: 5;
+    }
+  }
+  
+  .contact-button {
+    backdrop-filter: blur(15px);
+    background-color: rgba(89, 124, 43, 0.5);
+    grid-row: 3;
+
+    @media (width < 900px) {
+        grid-row: 6;
+        grid-column: 1;
+    }
+  }
 
 .button-icons {
   float: right;
   width: 45px;
 }
 
-.home-grid:not(.button-icons) {
-  float: left;
+/*--------------Contacts-Grid--------------*/
+.contact-grid {
+  column-gap: 24px;
+  display: grid;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: repeat(2, 20% [row-start]);
+  justify-content: center;
+  row-gap: 24px;
+
+  @media (width < 900px) {
+    grid-template-columns: 350px;
+    grid-template-rows: 150px [row-start] 150px [row-start] 75px [row-start] 75px [row-start] 75px [row-start] 75px [row-start];
+  }
 }
 
-@media (width < 900px) {
-  /*header*/
-  .home-header {
-    display: none;
-  }
-  .home-drawer {
-    align-self: stretch;
-    backdrop-filter: blur(15px);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    margin-top: 0px;
-    top: 0;
-    /*animation of the top that switch from -200 to 0 px*/
-    z-index: 5;
-    /*the overflow auto is useful for the scroll of an element that its longer than necessary*/
-    overflow: auto;
-  }
+.contact-picture {
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: url("images/mySelf.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  grid-column: 1;
+  grid-row: 1/5;
+  height: 100%;
+  /*prende la colonna 1, righe dalla 1 alla 4*/
+  margin: unset auto;
+  transition: background-image 1s ease-in-out;
+  width: 100%;
 
-  .drawer-toggle {
-    content: url("images/menu.svg");
-    display: block;
-    position: absolute;
-    /*assignments to reset the transition*/
-    rotate: 0deg;
-    /* animation of the top that switch from -200 to 0 px*/
-    transition: rotate 0.5s;
-    width: 60px;
-    z-index: 10;
+  @media (width < 900px) {
+    grid-column: 1;
+    grid-row: 1/3;
   }
+}
 
-  .drawer-link {
-    padding-top: 75px;
-    padding-bottom: 75px;
+.contact-picture:hover {
+  background-image: url("images/smile.png");
+}
+
+.contact-name {
+  background-color: rgb(101, 184, 66, 0.5);
+  grid-column: 2;
+  grid-row: 1;
+
+  @media (width < 900px) {
+    grid-column: 1;
+    grid-row: 3;
   }
+}
 
-  /*GRID 1*/
+.contact-mail {
+  background-color: rgba(128, 161, 66, 0.5);
+  grid-column: 2;
+  grid-row: 2;
 
-  .home-grid {
-    grid-template-columns: 350px;
-    grid-template-rows: repeat(6, 100px[row-start]);
-  }
-
-  .courses-button {
-    /*first button*/
+  @media (width < 900px) {
+    grid-column: 1;
     grid-row: 4;
-    grid-column: 1;
   }
+}
 
-  .about-button {
-    /*second button*/
+.contact-number {
+  background-color: rgba(89, 124, 43, 0.5);
+  grid-column: 2;
+  grid-row: 3;
+
+  @media (width < 900px) {
+    grid-column: 1;
     grid-row: 5;
-    grid-column: 1;
   }
+}
 
-  .contact-button {
-    /*third button*/
-    grid-row: 6;
+.contact-social {
+  background-color: rgba(67, 98, 26, 0.5);
+  grid-column: 2;
+  grid-row: 4;
+
+  @media (width < 900px) {
     grid-column: 1;
+    grid-row: 6;
   }
+}
+
+.social-icon {
+  display: block;
+  margin: auto 10px auto 10px;
+}
+
+.contact-title {
+  padding-left: 15%;
+  padding-top: 5%;
+}
+
+.contact-element {
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  display: flex;
+  height: 80px;
+  justify-content: center;
 }

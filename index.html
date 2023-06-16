@@ -1,62 +1,74 @@
 <!DOCTYPE html>
+    <head lang=”it”>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="column" onresize="manageWindowResize()">
 
-<head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="column" onresize="manageWindowResize()">
-
-    <!-- header -->
-    <div id="homeHeaderRef" class="home-header">
-        <div class="flex-grow justify-evenly row">
-            <a id="homeLinkRef">Home</a>
-            <a id="coursesLinkRef">Corsi</a>
-            <a id="aboutLinkRef">About</a>
-        </div>
-
-        <a id="headerLogoRef" class="header-logo">
-            <img src="images/logo.png" id="headerLogoImageRef" class="header-logo-image">
-        </a>
-
-        <div class="flex-grow justify-evenly row">
-            <a id="loginLinkRef">Log In</a>
-            <a id="signinLinkRef">Sign Up</a>
-        </div>
-    </div>
-
-    <!-- grid wrapper -->
-    <div class="flex-grow column items-center justify-center grid-wrapper">
-        <!-- Home page contained in a div and managed with a grid -->
-        <div id="homeGridRef" class="home-grid">
-            <div id="citationDivRef" class="citation-div">
-                <h2 id="citationHeadingRef" class="citation-heading"><b>" Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry.<br>
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        "</b></h2>
+        <!-- header -->
+        <div id="homeHeaderRef" class="home-header">
+            <div class="flex-grow justify-evenly row">
+                <a id="homeLinkRef">Home</a>
+                <a id="coursesLinkRef">Corsi</a>
+                <a id="aboutLinkRef">About</a>
             </div>
 
-            <button id="coursesButtonRef" class="courses-button home-button">
-                <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg">
-            </button>
+            <a id="headerLogoRef" class="header-logo">
+                <img src="images/logo.png" id="headerLogoImageRef" class="header-logo-image">
+            </a>
 
-            <button id="aboutButtonRef" class="about-button home-button">
-                <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg">
-            </button>
-
-            <button id="contactButtonRef" class="contact-button home-button">
-                <h3 id="contactButtonRef1">CONTATTI</h3> <img class="button-icons" src="images/user.svg">
-            </button>
+            <div class="flex-grow justify-evenly row">
+                <a id="loginLinkRef">Log In</a>
+                <a id="signinLinkRef">Sign Up</a>
+            </div>
         </div>
-    </div>
 
-    <!-- image that became visible when the window width is under 900px -->
-    <!-- src hadn't been written dawn because it will be modified from the css just when the window size is less than 900px-->
-    <img id="drawerToggleRef" class="drawer-toggle" onclick="drawerMobile()">
+        <!-- grid wrapper -->
+        <div id="homeWrapperRef" class="flex-grow column items-center justify-center grid-wrapper">
+            <!-- Home page contained in a div and managed with a grid -->
+            <div id="homeWrapperRef" class="home-grid">
+                <div id="citationDivRef" class="citation-div">
+                    <h2 id="citationHeadingRef" class="citation-heading"><b>" Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry.<br>
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            "</b></h2>
+                </div>
 
-    <!-- drawer wrapper -->
-    <div id="drawerWrapperRef" class="drawer-wrapper">
+                <button id="coursesButtonRef" class="courses-button home-button">
+                    <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg">
+                </button>
+
+                <button id="aboutButtonRef" class="about-button home-button">
+                    <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg">
+                </button>
+
+                <button id="contactButtonRef" class="contact-button home-button">
+                    <h3 id="contactButtonRef1">CONTATTI</h3> <img class="button-icons" src="images/user.svg">
+                </button>
+            </div>
+        </div>
+
+        <!-- image that became visible when the window width is under 900px -->
+        <!-- src hadn't been written dawn because it will be modified from the css just when the window size is less than 900px-->
+        <img id="drawerToggleRef" class="drawer-toggle" onclick="drawerMobile()">
+
+        <!-- Contacts page contained in a div and managed with a grid -->
+        <div id="contactWrapperRef" class="flex-grow column items-center justify-center grid-wrapper">
+            <div id="contactGridRef" class="contact-grid">
+                <div id="pictureImageRef" class="contact-picture"></div>
+                <div id="nameContactRef" class="contact-element contact-name"><h3>Hendrik Tronconi</h3></div>
+                <div id="mailContactRef" class="contact-element contact-mail"><h3>stofacendo@unaprova.ok</h3></div>
+                <div id="numberContactRef" class="contact-element contact-number"><h3>[+39] 3486499202</h3></div>
+                <div id="socialContactRef" class="contact-element contact-social">
+                    <h3 class="social-icon">FOLLOW US: </h3>
+                    <a href="https://instagram.com/" target=”_blank” class="social-icon"><img src="images/instagram.png" ></a>
+                    <a href="https://facebook.com/" target=”_blank” class="social-icon"><img src="images/facebook.png" ></a>
+                    <a href="https://twitter.com/" target=”_blank” class="social-icon"><img src="images/twitter.png" ></a>
+                </div>
+            </div>
+        </div>
+        
         <!-- drawer -->
         <div id="homeDrawerRef" class="home-drawer">
             <a id="homeLinkDrawerRef" class="drawer-link">Home</a>
