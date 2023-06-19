@@ -158,17 +158,6 @@ body {
     margin: 0 12px;
     text-align: center;
   }
-  
-
-.home-button {
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  /* nullifies the style of buttons's borders */
-  border-style: none;
-  grid-column: 2;
-  height: 120px;
-  transition: all 0.9s;
-}
 
 .home-button:hover {
   transform: scale(1.05);
