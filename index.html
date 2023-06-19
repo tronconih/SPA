@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <head lang=”it”>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="./abstractbutton.js" type="module"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body class="column" onresize="manageWindowResize()">
@@ -35,15 +36,15 @@
                             "</b></h2>
                 </div>
 
-                <button id="coursesButtonRef" class="courses-button home-button">
+                <button id="coursesButtonRef" class="courses-button home-button" slot="home-grid-button">
                     <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg">
                 </button>
 
-                <button id="aboutButtonRef" class="about-button home-button">
+                <button id="aboutButtonRef" class="about-button home-button" slot="home-grid-button">
                     <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg">
                 </button>
 
-                <button id="contactButtonRef" class="contact-button home-button">
+                <button id="contactButtonRef" class="contact-button home-button" slot="home-grid-button">
                     <h3 id="contactButtonRef1">CONTATTI</h3> <img class="button-icons" src="images/user.svg">
                 </button>
             </div>
