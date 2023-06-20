@@ -1,7 +1,6 @@
 const template = document.createElement("template");
 template.innerHTML = "<style>"+
-".home-button {"+
-    "backdrop-filter: blur(15px);"+
+":host(abstract-button){"+
     "border-radius: 25px;"+
     "/* nullifies the style of buttons's borders */"+
     "border-style: none;"+
@@ -9,8 +8,21 @@ template.innerHTML = "<style>"+
     "height: 120px;"+
     "transition: all 0.9s;"+
   "}"+
+  ":host(abstract-button :hover) {"+
+    "transform: scale(1.05);"+
+  "}"+
+  "::slotted(h3){"+
+    "text-align: center;"+
+    "}"+
+  "::slotted(img) {"+
+    "float: right;"+
+    "width: 45px;"+
+  "}"+
 "</style>"+
-"<slot name='home-grid-button'> Nothing were written in this slot </slot>";
+"<div>"+
+    "<slot name='button-name'> button-name </slot>"+
+    "<slot name='button-image'> button-image </slot>"+
+"</div>";
 
 class AbstractButton extends HTMLElement{
     constructor(){

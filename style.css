@@ -159,10 +159,6 @@ body {
     text-align: center;
   }
 
-.home-button:hover {
-  transform: scale(1.05);
-}
-
 .courses-button {
     backdrop-filter: blur(15px);
     background-color: rgb(101, 184, 66, 0.5);
@@ -195,11 +191,6 @@ body {
         grid-column: 1;
     }
   }
-
-.button-icons {
-  float: right;
-  width: 45px;
-}
 
 /*--------------Contacts-Grid--------------*/
 .contact-grid {
