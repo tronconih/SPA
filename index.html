@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <head lang=”it”>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="./abstractbutton.js" type="module"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body class="column" onresize="manageWindowResize()">
@@ -34,18 +35,13 @@
                             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                             "</b></h2>
                 </div>
+                
+                <abstract-button id="coursesButtonRef" title="Corsi" image-element="images/courses.svg" button-part="courses-button"></abstract-button>
 
-                <button id="coursesButtonRef" class="courses-button home-button">
-                    <h3>CORSI</h3> <img class="button-icons" src="images/courses.svg">
-                </button>
+                <abstract-button id="aboutButtonRef"  title="About" image-element="images/info.svg" button-part="about-button"></abstract-button>
 
-                <button id="aboutButtonRef" class="about-button home-button">
-                    <h3>ABOUT</h3> <img class="button-icons" src="images/info.svg">
-                </button>
-
-                <button id="contactButtonRef" class="contact-button home-button">
-                    <h3 id="contactButtonRef1">CONTATTI</h3> <img class="button-icons" src="images/user.svg">
-                </button>
+                <abstract-button id="contactButtonRef" title="Contatti" image-element="images/user.svg" button-part="contact-button"></abstract-button>
+                
             </div>
         </div>
 
