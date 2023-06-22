@@ -141,6 +141,11 @@ body {
   padding: 24px;
 }
 
+.citation-heading {
+    margin: 0 12px;
+    text-align: center;
+}
+
 .home-grid {
   column-gap: 24px;
   display: grid;
@@ -153,44 +158,6 @@ body {
     grid-template-rows: repeat(6, 100px[row-start]);
   }
 }
-
-.citation-heading {
-    margin: 0 12px;
-    text-align: center;
-  }
-
-.courses-button {
-    backdrop-filter: blur(15px);
-    background-color: rgb(101, 184, 66, 0.5);
-    grid-row: 1;
-  
-    @media (width < 900px) {
-        grid-column: 1;
-        grid-row: 4;
-    }
-  }
-  
-  .about-button {
-    backdrop-filter: blur(15px);
-    background-color: rgba(128, 161, 66, 0.5);
-    grid-row: 2;
-
-    @media (width < 900px) {
-        grid-column: 1;
-        grid-row: 5;
-    }
-  }
-  
-  .contact-button {
-    backdrop-filter: blur(15px);
-    background-color: rgba(89, 124, 43, 0.5);
-    grid-row: 3;
-
-    @media (width < 900px) {
-        grid-row: 6;
-        grid-column: 1;
-    }
-  }
 
 /*--------------Contacts-Grid--------------*/
 .contact-grid {
@@ -292,4 +259,48 @@ body {
   display: flex;
   height: 80px;
   justify-content: center;
+}
+
+/* buttons's web component */
+
+abstract-button::part(button-title){
+  text-align: center;
+}
+
+abstract-button::part(button-icon){
+  float: right;
+  width: 45px;
+}
+
+abstract-button::part(courses-button) {
+  backdrop-filter: blur(15px);
+  background-color: rgb(101, 184, 66, 0.5);
+  grid-row: 1;
+
+  @media (width < 900px) {
+      grid-column: 1;
+      grid-row: 4;
+  }
+}
+
+abstract-button::part(about-button) {
+  backdrop-filter: blur(15px);
+  background-color: rgba(128, 161, 66, 0.5);
+  grid-row: 2;
+
+  @media (width < 900px) {
+      grid-column: 1;
+      grid-row: 5;
+  }
+}
+
+abstract-button::part(contact-button) {
+  backdrop-filter: blur(15px);
+  background-color: rgba(89, 124, 43, 0.5);
+  grid-row: 3;
+
+  @media (width < 900px) {
+      grid-row: 6;
+      grid-column: 1;
+  }
 }
