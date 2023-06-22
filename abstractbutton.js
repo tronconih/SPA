@@ -1,5 +1,18 @@
 const template = document.createElement("template");
-template.innerHTML = `<button class='normal-button'>
+template.innerHTML = `<style>
+  .normal-button{
+    border-radius: 25px;
+    border-style: none;
+    grid-column: 2;
+    height: 120px;
+    width: 100%;
+    transition: all 0.9s;
+  }
+  .normal-button:hover{
+    transform: scale(1.05);
+  }
+</style>
+<button class='normal-button'>
     <h3 part='button-title'></h3>
     <img part='button-icon'></img>
 </button>`;
